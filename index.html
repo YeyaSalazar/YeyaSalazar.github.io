@@ -1,17 +1,107 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio</title>
-    <style>
-        body { font-family: system-ui, sans-serif; text-align: center; padding: 50px; background: #f4f4f9; }
-        h1 { color: #333; }
-    </style>
+    <title>Mi Portafolio Daniela Salazar</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>¡Hola! Soy Desarrollador</h1>
-    <p>Bienvenido a mi portafolio web alojado en GitHub Pages.</p>
+
+<body class="bg-pink-200 text-neutral-900 font-sans">
+
+    <!-- Header / Navbar -->
+    <header class="shadow-xl flex justify-between items-center px-8 py-6  mx-auto">
+        <h1 class="text-xl font-bold text-pink-500">Iran Dev</h1>
+        <nav class="space-x-6">
+            <a href="#proyectos" class="hover:text-pink-700 transition">Proyectos</a>
+            <a href="#sobre-mi" class="hover:text-pink-700 transition">Sobre mí</a>
+            <a href="#mi-cv" class="hover:text-pink-700 transition">Mi CV</a>
+            <a href="#sobre-mi" class="hover:text-pink-700 transition">Blog</a>
+            <a href="#contacto" class="hover:text-pink-700 transition">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- Sección Hero (Presentación) -->
+    <section
+        class="flex flex-col md:flex-row items-center justify-between text-center md:text-left py-20 w-[80%] mx-auto">
+        <div class="max-w-xl">
+            <h2 class="text-4xl md:text-6xl font-extrabold mb-4">Hola, soy <span class="text-pink-500">Iran
+                    Salazar</span></h2>
+            <p class="text-2xl text-gray-600 mb-5 italic font-serif">Desarrolladora de software</p>
+            <p class="text-lg mb-5 text-slate-400">Desarrollador web enfocado en crear soluciones limpias, funcionales y
+                atractivas.</p>
+            <a href="#proyectos"
+                class="inline-block bg-pink-400 hover:bg-pink-500 text-white font-semibold px-6 py-3 rounded-lg transition mb-5">Ver
+                Proyectos</a>
+            <h3 class="text-2xl text-pink-900 font-semibold mb-5">Tecnologías</h3>
+            <div class="flex items-start">
+                <img src="/assets/tailwind-logo.webp" class="w-13 h-10">
+                <img src="/assets/tailwind-logo.webp" class="w-13 h-10">
+                <img src="/assets/tailwind-logo.webp" class="w-13 h-10">
+                <img src="/assets/tailwind-logo.webp" class="w-13 h-10">
+                <img src="/assets/tailwind-logo.webp" class="w-13 h-10">
+            </div>
+        </div>
+        <div class="flex relative flex justify-center items-center mt-10 md:mt-0">
+            <img src="/assets/perfil-yeya.png" class="relative z-10 w-72 h-72 md:w-96 md:h-96 object-contain block">
+        </div>
+    </section>
+
+    <!-- Sección de Proyectos -->
+    <section id="proyectos" class="w-[80%] mx-auto mb-8">
+        <h3 class="text-3xl font-bold text-pink-500 mb-2">Mis Proyectos</h3>
+        <p class="text-l text-gray-600 mb-8">Coleccion de proyectos realizados</p>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <!-- Tarjeta de Proyecto 1 -->
+            <div class="bg-white rounded-xl shadow-xl">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNe1izW29mPYO-8QmFE9R1rhywWE7iaJ0rbKMGOiiDvA&s=10"
+                    class="h-[250px] w-full rounded-[2%_2%_0_0] mb-3">
+                <div class="p-6">
+                    <h4 class="text-xl font-bold mb-2 text-pink-500">Proyecto 1</h4>
+                    <p class="text-gray-700 mb-4">Descripción breve de qué hace el proyecto y qué tecnologías usaste.
+                    </p>
+                    <a href="#" class="text-pink-400 hover:underline font-medium">Ver repositorio &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Sobre mi -->
+    <section id="sobre-mi"
+        class="flex flex-col md:flex-row items-center justify-between text-start md:text-left py-20 w-[80%] mx-auto">
+        <div class="flex relative flex justify-center items-center mt-10 md:mt-0 mb-8">
+            <img src="/assets/perfil-yeya.png" class="relative z-10 w-72 h-72 md:w-96 md:h-96 object-contain block">
+        </div>
+        <div class="max-w-xl">
+            <h3 class="text-3xl font-bold text-pink-500 mb-2">Sobre mí</h3>
+            <p class="text-lg mb-5 text-gray-800">Desarrollador web enfocado en crear soluciones limpias, funcionales y
+                atractivas.</p>
+        </div>
+    </section>
+
+    <!-- Sección de Mi CV -->
+    <section id="mi-cv" class="w-[80%] mx-auto mb-8">
+        <h3 class="text-3xl font-bold text-pink-500 mb-2">Mi CV</h3>
+        <p class="text-l text-gray-600 mb-8">Una Descripción sobre mi y mis logros</p>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <!-- Tarjeta de Proyecto 1 -->
+            <div class="bg-white rounded-xl shadow-xl p-6">
+                <img src="https://static.vecteezy.com/system/resources/previews/030/972/937/non_2x/achievement-icon-vector.jpg" class="w-13 h-10 mb-2">
+                <h4 class="text-xl font-bold mb-2">Logro 1</h4>
+                <p class="text-gray-800 mb-4">Descripción breve de qué hace el proyecto y qué tecnologías usaste.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contacto -->
+    <footer id="contacto" class="text-center py-12 border-t border-slate-800 mt-20">
+        <p class="text-slate-400 mb-4">¿Te interesa trabajar conmigo? ¡Contáctame!</p>
+        <a href="mailto:tu-correo@example.com"
+            class="text-cyan-400 font-semibold hover:underline">tu-correo@example.com</a>
+    </footer>
+
 </body>
+
 </html>
