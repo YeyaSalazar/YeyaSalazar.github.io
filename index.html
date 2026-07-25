@@ -1,56 +1,124 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio Daniela Salazar</title>
+    <title>Mi Portafolio Iran Salazar</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-pink-200 text-neutral-900 font-sans">
+<body class="bg-gradient-to-br from-pink-200 to-pink-400 backdrop-blur-sm text-neutral-900 font-sans">
 
     <!-- Header / Navbar -->
-    <header class="shadow-xl flex justify-between items-center px-8 py-6  mx-auto">
-        <h1 class="text-xl font-bold text-pink-500">Iran Dev</h1>
+    <header class="sticky top-0 z-50 bg-pink-200 shadow flex justify-between items-center px-8 py-6  mx-auto">
+        <a href="#" class="text-xl font-bold text-pink-500 hover:scale-110 transition duration-300 inline-block">Iran
+            Dev</a>
         <nav class="space-x-6">
-            <a href="#proyectos" class="hover:text-pink-700 transition">Proyectos</a>
-            <a href="#sobre-mi" class="hover:text-pink-700 transition">Sobre mí</a>
-            <a href="#mi-cv" class="hover:text-pink-700 transition">Mi CV</a>
-            <a href="#sobre-mi" class="hover:text-pink-700 transition">Blog</a>
-            <a href="#contacto" class="hover:text-pink-700 transition">Contacto</a>
+            <a href="#proyectos"
+                class="hover:text-pink-700 hover:scale-110 transition duration-300 inline-block">Proyectos</a>
+            <a href="#sobre-mi" class="hover:text-pink-700 hover:scale-110 transition duration-300 inline-block">Sobre
+                mí</a>
+            <a href="#mi-cv" class="hover:text-pink-700 hover:scale-110 transition duration-300 inline-block">Mi CV</a>
+            <a href="#sobre-mi"
+                class="hover:text-pink-700 hover:scale-110 transition duration-300 inline-block">Blog</a>
+            <a href="#contacto"
+                class="hover:text-pink-700 hover:scale-110 transition duration-300 inline-block">Contacto</a>
         </nav>
     </header>
 
     <!-- Sección Hero (Presentación) -->
-    <section
-        class="flex flex-col md:flex-row items-center justify-between text-center md:text-left py-20 w-[80%] mx-auto">
+    <section id="seccion-hero"
+        class="flex flex-col md:flex-row items-center justify-between text-center md:text-left pt-20 w-[80%] mx-auto">
         <div class="max-w-xl">
-            <h2 class="text-4xl md:text-6xl font-extrabold mb-4">Hola, soy <span class="text-pink-500">Iran
-                    Salazar</span></h2>
+            <h2 class="text-4xl md:text-6xl font-extrabold mb-4">
+                <span id="texto-saludo"></span><span class="text-pink-500"><span id="maquina-nombre"></span></span><span
+                    id="cursor-terminal" class="animate-pulse text-pink-500">|</span>
+            </h2>
             <p class="text-2xl text-gray-600 mb-5 italic font-serif">Desarrolladora de software</p>
-            <p class="text-lg mb-5 text-slate-400">Desarrollador web enfocado en crear soluciones limpias, funcionales y
+            <p class="text-lg mb-5 text-gray-700">Desarrollador web enfocado en crear soluciones limpias, funcionales y
                 atractivas.</p>
             <a href="#proyectos"
                 class="inline-block bg-pink-400 hover:bg-pink-500 text-white font-semibold px-6 py-3 rounded-lg transition mb-5">Ver
                 Proyectos</a>
-            <h3 class="text-2xl text-pink-900 font-semibold mb-5">Tecnologías</h3>
-            <div class="flex items-start">
-                <img src="/assets/tailwind-logo.webp" class="w-13 h-10">
-                <img src="/assets/tailwind-logo.webp" class="w-13 h-10">
-                <img src="/assets/tailwind-logo.webp" class="w-13 h-10">
-                <img src="/assets/tailwind-logo.webp" class="w-13 h-10">
-                <img src="/assets/tailwind-logo.webp" class="w-13 h-10">
-            </div>
         </div>
         <div class="flex relative flex justify-center items-center mt-10 md:mt-0">
             <img src="/assets/perfil-yeya.png" class="relative z-10 w-72 h-72 md:w-96 md:h-96 object-contain block">
         </div>
     </section>
 
+    <!-- Sección de Tecnologías con Carrusel Infinito y Efecto Relieve/Desvanecimiento -->
+    <section class="py-5 bg-gradient-to-r from-pink-300 via-pink-400 to-pink-300 shadow-inner overflow-hidden mb-10">
+        <div class="w-[80%] mx-auto mb-6 text-center md:text-left">
+            <h3 class="text-2xl text-white font-bold">Habilidades técnicas</h3>
+        </div>
+
+        <div class="relative w-full overflow-hidden max-w-5xl mx-auto mask-fade">
+            <div class="flex w-max animate-infinite-scroll space-x-12 items-center">
+                <!-- GRUPO 1 DE ICONOS -->
+                <div class="flex items-center space-x-12 shrink-0">
+                    <div
+                        class="flex items-center space-x-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/50">
+                        <img src="/assets/tailwind-logo.webp" class="w-8 h-8 object-contain">
+                        <span class="font-semibold text-pink-950">Tailwind CSS</span>
+                    </div>
+                    <div
+                        class="flex items-center space-x-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/50">
+                        <img src="/assets/tailwind-logo.webp" class="w-8 h-8 object-contain">
+                        <span class="font-semibold text-pink-950">JavaScript</span>
+                    </div>
+                    <div
+                        class="flex items-center space-x-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/50">
+                        <img src="/assets/tailwind-logo.webp" class="w-8 h-8 object-contain">
+                        <span class="font-semibold text-pink-950">HTML5</span>
+                    </div>
+                    <div
+                        class="flex items-center space-x-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/50">
+                        <img src="/assets/tailwind-logo.webp" class="w-8 h-8 object-contain">
+                        <span class="font-semibold text-pink-950">CSS3</span>
+                    </div>
+                    <div
+                        class="flex items-center space-x-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/50">
+                        <img src="/assets/tailwind-logo.webp" class="w-8 h-8 object-contain">
+                        <span class="font-semibold text-pink-950">Git</span>
+                    </div>
+                </div>
+
+                <!-- GRUPO 2 DE ICONOS (Duplicado exacto para lograr el bucle infinito sin saltos) -->
+                <div class="flex items-center space-x-12 shrink-0" aria-hidden="true">
+                    <div
+                        class="flex items-center space-x-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/50">
+                        <img src="/assets/tailwind-logo.webp" class="w-8 h-8 object-contain">
+                        <span class="font-semibold text-pink-950">Tailwind CSS</span>
+                    </div>
+                    <div
+                        class="flex items-center space-x-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/50">
+                        <img src="/assets/tailwind-logo.webp" class="w-8 h-8 object-contain">
+                        <span class="font-semibold text-pink-950">JavaScript</span>
+                    </div>
+                    <div
+                        class="flex items-center space-x-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/50">
+                        <img src="/assets/tailwind-logo.webp" class="w-8 h-8 object-contain">
+                        <span class="font-semibold text-pink-950">HTML5</span>
+                    </div>
+                    <div
+                        class="flex items-center space-x-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/50">
+                        <img src="/assets/tailwind-logo.webp" class="w-8 h-8 object-contain">
+                        <span class="font-semibold text-pink-950">CSS3</span>
+                    </div>
+                    <div
+                        class="flex items-center space-x-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/50">
+                        <img src="/assets/tailwind-logo.webp" class="w-8 h-8 object-contain">
+                        <span class="font-semibold text-pink-950">Git</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Sección de Proyectos -->
-    <section id="proyectos" class="w-[80%] mx-auto mb-8">
+    <section id="proyectos" class="w-[80%] mx-auto mb-8 scroll-mt-20">
         <h3 class="text-3xl font-bold text-pink-500 mb-2">Mis Proyectos</h3>
         <p class="text-l text-gray-600 mb-8">Coleccion de proyectos realizados</p>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
@@ -88,7 +156,8 @@
         <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
             <!-- Tarjeta de Proyecto 1 -->
             <div class="bg-white rounded-xl shadow-xl p-6">
-                <img src="https://static.vecteezy.com/system/resources/previews/030/972/937/non_2x/achievement-icon-vector.jpg" class="w-13 h-10 mb-2">
+                <img src="https://static.vecteezy.com/system/resources/previews/030/972/937/non_2x/achievement-icon-vector.jpg"
+                    class="w-13 h-10 mb-2">
                 <h4 class="text-xl font-bold mb-2">Logro 1</h4>
                 <p class="text-gray-800 mb-4">Descripción breve de qué hace el proyecto y qué tecnologías usaste.</p>
             </div>
@@ -101,6 +170,102 @@
         <a href="mailto:tu-correo@example.com"
             class="text-cyan-400 font-semibold hover:underline">tu-correo@example.com</a>
     </footer>
+
+    <style>
+        @keyframes scrollInfinito {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-infinite-scroll {
+            animation: scrollInfinito 25s linear infinite;
+        }
+
+        /* Efecto relieve / desvanecimiento en los bordes (máscara CSS) */
+        .mask-fade {
+            mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+        }
+    </style>
+
+    <!-- Script corregido -->
+    <script>
+        // Nos aseguramos de que el DOM esté completamente cargado
+        window.addEventListener("DOMContentLoaded", () => {
+            const parte1 = "Hola, soy ";
+            const parte2 = "Iran Salazar";
+
+            const elSaludo = document.getElementById("texto-saludo");
+            const elNombre = document.getElementById("maquina-nombre");
+            const seccion = document.getElementById("seccion-hero");
+
+            if (!seccion || !elSaludo || !elNombre) {
+                console.error("No se encontraron los elementos en el DOM.");
+                return;
+            }
+
+            let timeoutIds = [];
+
+            function reiniciarYEjecutar() {
+                timeoutIds.forEach(id => clearTimeout(id));
+                timeoutIds = [];
+
+                elSaludo.textContent = "";
+                elNombre.textContent = "";
+
+                let cursor = document.getElementById("cursor-terminal");
+                if (!cursor) {
+                    const h2 = elSaludo.parentElement;
+                    cursor = document.createElement("span");
+                    cursor.id = "cursor-terminal";
+                    cursor.className = "animate-pulse text-pink-500";
+                    cursor.textContent = "|";
+                    h2.appendChild(cursor);
+                }
+
+                let i = 0;
+                let j = 0;
+
+                function escribirSaludo() {
+                    if (i < parte1.length) {
+                        elSaludo.textContent += parte1.charAt(i);
+                        i++;
+                        timeoutIds.push(setTimeout(escribirSaludo, 100));
+                    } else {
+                        timeoutIds.push(setTimeout(escribirNombre, 150));
+                    }
+                }
+
+                function escribirNombre() {
+                    if (j < parte2.length) {
+                        elNombre.textContent += parte2.charAt(j);
+                        j++;
+                        timeoutIds.push(setTimeout(escribirNombre, 120));
+                    }
+                }
+
+                timeoutIds.push(setTimeout(escribirSaludo, 300));
+            }
+
+            // Usamos el IntersectionObserver de forma segura
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        reiniciarYEjecutar();
+                    }
+                });
+            }, {
+                threshold: 0.4
+            });
+
+            observer.observe(seccion);
+        });
+    </script>
 
 </body>
 
