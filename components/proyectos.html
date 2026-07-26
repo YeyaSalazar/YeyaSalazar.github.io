@@ -1,100 +1,114 @@
 <!-- Sección de Proyectos -->
-<section id="proyectos" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 scroll-mt-24">
+<section id="proyectos" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 scroll-mt-28">
     <div class="mb-10 text-center sm:text-left">
-        <h3 class="text-2xl sm:text-3xl font-bold text-pink-600 mb-2">Mis Proyectos</h3>
-        <p class="text-base text-gray-700">Colección de proyectos reales enfocados en soluciones web</p>
+        <h3 class="text-2xl sm:text-3xl font-bold text-pink-600 mb-2">Proyectos Destacados</h3>
+        <p class="text-base text-gray-700">Una muestra de soluciones web enfocadas en rendimiento, usabilidad y código limpio.</p>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-        <!-- Tarjeta 1 -->
-        <div
-            class="proyecto-card bg-white rounded-2xl shadow-lg overflow-hidden hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between border border-pink-100">
+        <!-- Proyecto 1: Yeya's Little Shop -->
+        <div class="proyecto-card bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between border border-pink-100 overflow-hidden group">
             <div>
-                <div class="overflow-hidden h-48 sm:h-52">
+                <div class="relative overflow-hidden h-48 sm:h-52">
                     <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=500&auto=format&fit=crop"
                         alt="Yeya's Little Shop"
-                        class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <span class="absolute top-3 right-3 bg-pink-600/90 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                        E-commerce
+                    </span>
                 </div>
                 <div class="p-6">
-                    <h4 class="text-xl font-bold mb-2 text-pink-600">Yeya's Little Shop</h4>
-                    <p class="text-gray-600 text-sm mb-4 leading-relaxed">Plataforma de comercio electrónico diseñada
-                        para la venta de joyería artesanal y accesorios temáticos.</p>
+                    <h4 class="text-xl font-bold mb-2 text-pink-700 group-hover:text-pink-600 transition">Yeya's Little Shop</h4>
+                    <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                        Tienda en línea interactiva para joyería artesanal. Implementa interfaz dinámicas de catálogo, carrito de compras y diseño 100% responsivo.
+                    </p>
                     <div class="flex flex-wrap gap-2 mb-2">
-                        <span
-                            class="px-3 py-1 rounded-full text-xs font-medium bg-pink-100 text-pink-700 border border-pink-200">HTML5</span>
-                        <span
-                            class="px-3 py-1 rounded-full text-xs font-medium bg-pink-100 text-pink-700 border border-pink-200">Tailwind
-                            CSS</span>
-                        <span
-                            class="px-3 py-1 rounded-full text-xs font-medium bg-pink-100 text-pink-700 border border-pink-200">JavaScript</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-pink-50 text-pink-700 border border-pink-200/80">HTML5</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-pink-50 text-pink-700 border border-pink-200/80">Tailwind CSS</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-pink-50 text-pink-700 border border-pink-200/80">JavaScript ES6+</span>
                     </div>
                 </div>
             </div>
-            <div class="px-6 pb-6 flex items-center justify-between gap-3 border-t border-gray-100 pt-4">
-                <a href="#" target="_blank"
-                    class="flex-1 text-center bg-pink-500 hover:bg-pink-600 text-white text-sm font-medium py-2 px-4 rounded-lg transition shadow-sm">Ver
-                    Demo</a>
-                <a href="#" target="_blank"
-                    class="flex-1 text-center bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-medium py-2 px-4 rounded-lg transition">Código
-                    &rarr;</a>
+            <div class="px-6 pb-6 pt-4 flex items-center justify-between gap-3 border-t border-gray-100">
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                    class="flex-1 inline-flex items-center justify-center gap-1.5 bg-pink-600 hover:bg-pink-700 text-white text-sm font-semibold py-2.5 px-4 rounded-xl transition shadow-sm">
+                    <span>Ver Demo</span>
+                    <i class="bx bx-link-external text-base"></i>
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                    class="flex-1 inline-flex items-center justify-center gap-1.5 bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-semibold py-2.5 px-4 rounded-xl transition">
+                    <i class="bx bxl-github text-lg"></i>
+                    <span>Código</span>
+                </a>
             </div>
         </div>
 
-        <!-- Tarjeta 2 -->
-        <div
-            class="proyecto-card bg-white rounded-2xl shadow-lg overflow-hidden hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between border border-pink-100">
+        <!-- Proyecto 2: Portafolio Web -->
+        <div class="proyecto-card bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between border border-pink-100 overflow-hidden group">
             <div>
-                <div class="overflow-hidden h-48 sm:h-52">
+                <div class="relative overflow-hidden h-48 sm:h-52">
                     <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=500&auto=format&fit=crop"
-                        alt="Portafolio Web"
-                        class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                        alt="Portafolio Web Personal"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <span class="absolute top-3 right-3 bg-pink-600/90 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                        Personal
+                    </span>
                 </div>
                 <div class="p-6">
-                    <h4 class="text-xl font-bold mb-2 text-pink-600">Portafolio Web</h4>
-                    <p class="text-gray-600 text-sm mb-4 leading-relaxed">Sitio web personal interactivo con animaciones
-                        fluidas y diseño responsivo adaptado a dispositivos móviles.</p>
+                    <h4 class="text-xl font-bold mb-2 text-pink-700 group-hover:text-pink-600 transition">Portafolio Web Interactivo</h4>
+                    <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                        Plataforma personal con arquitectura modular HTML/JS, animaciones fluidas con IntersectionObserver y diseño adaptativo con Tailwind CSS.
+                    </p>
                     <div class="flex flex-wrap gap-2 mb-2">
-                        <span
-                            class="px-3 py-1 rounded-full text-xs font-medium bg-pink-100 text-pink-700 border border-pink-200">Tailwind</span>
-                        <span
-                            class="px-3 py-1 rounded-full text-xs font-medium bg-pink-100 text-pink-700 border border-pink-200">JS
-                            Interactivo</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-pink-50 text-pink-700 border border-pink-200/80">Tailwind CSS v3.4</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-pink-50 text-pink-700 border border-pink-200/80">JavaScript Vanilla</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-pink-50 text-pink-700 border border-pink-200/80">UI/UX Responsivo</span>
                     </div>
                 </div>
             </div>
-            <div class="px-6 pb-6 flex items-center justify-between gap-3 border-t border-gray-100 pt-4">
-                <a href="#" target="_blank"
-                    class="flex-1 text-center bg-pink-500 hover:bg-pink-600 text-white text-sm font-medium py-2 px-4 rounded-lg transition shadow-sm">Ver
-                    Demo</a>
-                <a href="#" target="_blank"
-                    class="flex-1 text-center bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-medium py-2 px-4 rounded-lg transition">Código
-                    &rarr;</a>
+            <div class="px-6 pb-6 pt-4 flex items-center justify-between gap-3 border-t border-gray-100">
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                    class="flex-1 inline-flex items-center justify-center gap-1.5 bg-pink-600 hover:bg-pink-700 text-white text-sm font-semibold py-2.5 px-4 rounded-xl transition shadow-sm">
+                    <span>Ver Demo</span>
+                    <i class="bx bx-link-external text-base"></i>
+                </a>
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                    class="flex-1 inline-flex items-center justify-center gap-1.5 bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-semibold py-2.5 px-4 rounded-xl transition">
+                    <i class="bx bxl-github text-lg"></i>
+                    <span>Código</span>
+                </a>
             </div>
         </div>
 
-        <!-- Tarjeta 3 -->
-        <div
-            class="proyecto-card bg-white rounded-2xl shadow-lg overflow-hidden hover:-translate-y-1.5 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between border border-pink-100 sm:col-span-2 lg:col-span-1">
+        <!-- Proyecto 3: Work in Progress -->
+        <div class="proyecto-card bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col justify-between border border-pink-100 overflow-hidden sm:col-span-2 lg:col-span-1 group">
             <div>
-                <div class="overflow-hidden h-48 sm:h-52">
+                <div class="relative overflow-hidden h-48 sm:h-52 bg-gray-900">
                     <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=500&auto=format&fit=crop"
                         alt="Próximo proyecto"
-                        class="w-full h-full object-cover transition-transform duration-500 hover:scale-105 opacity-80">
+                        class="w-full h-full object-cover opacity-60 transition-transform duration-500 group-hover:scale-105">
+                    <span class="absolute top-3 right-3 bg-amber-500/90 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
+                        <i class="bx bx-loader-circle animate-spin"></i> En Desarrollo
+                    </span>
                 </div>
                 <div class="p-6">
-                    <h4 class="text-xl font-bold mb-2 text-pink-600">Proyecto Próximamente</h4>
-                    <p class="text-gray-600 text-sm mb-4 leading-relaxed">Espacio reservado para el próximo desarrollo
-                        de software integrando bases de datos y lógica avanzada.</p>
+                    <h4 class="text-xl font-bold mb-2 text-pink-700">API Full Stack & Dashboard</h4>
+                    <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                        Próxima aplicación enfocada en gestión de datos con Node.js, autenticación de usuarios y consumo de APIs RESTful.
+                    </p>
                     <div class="flex flex-wrap gap-2 mb-2">
-                        <span
-                            class="px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-500 border border-gray-200">En
-                            desarrollo</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-gray-100 text-gray-600 border border-gray-200">Node.js</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-gray-100 text-gray-600 border border-gray-200">Express</span>
+                        <span class="px-2.5 py-1 rounded-md text-xs font-semibold bg-gray-100 text-gray-600 border border-gray-200">REST API</span>
                     </div>
                 </div>
             </div>
-            <div class="px-6 pb-6 flex items-center justify-between gap-3 border-t border-gray-100 pt-4">
-                <span class="w-full text-center text-gray-400 text-sm py-2 bg-gray-50 rounded-lg">Próximamente</span>
+            <div class="px-6 pb-6 pt-4 flex items-center justify-between border-t border-gray-100">
+                <span class="w-full text-center text-gray-500 font-medium text-sm py-2.5 bg-gray-50 rounded-xl border border-gray-200/60 flex items-center justify-center gap-2">
+                    <i class="bx bx-code-alt text-lg"></i>
+                    Construyendo actualmente...
+                </span>
             </div>
         </div>
 
