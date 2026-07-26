@@ -1,191 +1,7 @@
 // ==========================================
-// FUNCIÓN PARA CARGAR COMPONENTES HTML
+// CONFIGURACIÓN Y BASE DE DATOS DEL BLOG
 // ==========================================
-async function cargarComponente(idContenedor, rutaArchivo) {
-    try {
-        const respuesta = await fetch(rutaArchivo);
-        if (respuesta.ok) {
-            const html = await respuesta.text();
-            const contenedor = document.getElementById(idContenedor);
-            if (contenedor) {
-                contenedor.innerHTML = html;
-            }
-        } else {
-            console.error(`Error al cargar ${rutaArchivo} (${respuesta.status})`);
-        }
-    } catch (error) {
-        console.error(`Error de red/fetch en ${rutaArchivo}:`, error);
-    }
-}
-
-// Marcamos el callback de DOMContentLoaded como ASYNC
-document.addEventListener("DOMContentLoaded", async () => {
-
-    // 1. Cargamos TODOS los componentes primero en paralelo
-    await Promise.all([
-        cargarComponente("component-header", "./components/header.html"),
-        cargarComponente("component-hero", "./components/hero.html"),
-        cargarComponente("component-habilidades", "./components/habilidades.html"),
-        cargarComponente("component-proyectos", "./components/proyectos.html"),
-        cargarComponente("component-sobre-mi", "./components/sobre-mi.html"),
-        cargarComponente("component-cv", "./components/cv-logros.html"),
-        cargarComponente("component-blog", "./components/blog.html"),
-        cargarComponente("component-footer", "./components/footer.html")
-    ]);
-
-    // ==========================================
-    // 1. SCRIPT DE EFECTO MÁQUINA DE ESCRIBIR (HERO)
-    // ==========================================
-    const parte1 = "Hola, soy ";
-    const parte2 = "Iran Salazar";
-
-    const elSaludo = document.getElementById("texto-saludo");
-    const elNombre = document.getElementById("maquina-nombre");
-    const seccion = document.getElementById("seccion-hero");
-
-    if (!seccion || !elSaludo || !elNombre) {
-        console.warn("Elementos de la sección Hero no encontrados en esta vista.");
-    } else {
-        let timeoutIds = [];
-
-        function reiniciarYEjecutar() {
-            timeoutIds.forEach(id => clearTimeout(id));
-            timeoutIds = [];
-
-            elSaludo.textContent = "";
-            elNombre.textContent = "";
-
-            let cursor = document.getElementById("cursor-terminal");
-            if (!cursor) {
-                const h2 = elSaludo.parentElement;
-                cursor = document.createElement("span");
-                cursor.id = "cursor-terminal";
-                cursor.className = "animate-pulse text-pink-500";
-                cursor.textContent = "|";
-                h2.appendChild(cursor);
-            }
-
-            let i = 0;
-            let j = 0;
-
-            function escribirSaludo() {
-                if (i < parte1.length) {
-                    elSaludo.textContent += parte1.charAt(i);
-                    i++;
-                    timeoutIds.push(setTimeout(escribirSaludo, 100));
-                } else {
-                    timeoutIds.push(setTimeout(escribirNombre, 150));
-                }
-            }
-
-            function escribirNombre() {
-                if (j < parte2.length) {
-                    elNombre.textContent += parte2.charAt(j);
-                    j++;
-                    timeoutIds.push(setTimeout(escribirNombre, 120));
-                }
-            }
-
-            timeoutIds.push(setTimeout(escribirSaludo, 300));
-        }
-
-        const observerHero = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    reiniciarYEjecutar();
-                }
-            });
-        }, {
-            threshold: 0.4
-        });
-
-        observerHero.observe(seccion);
-    }
-
-    // ==========================================
-    // 2. SCRIPT DE ANIMACIÓN REPETIBLE EN PROYECTOS
-    // ==========================================
-    const tarjetasProyectos = document.querySelectorAll(".proyecto-card");
-
-    if (tarjetasProyectos.length > 0) {
-        const observerProyectos = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.remove("opacity-0", "-translate-x-10");
-                } else {
-                    entry.target.classList.add("opacity-0", "-translate-x-10");
-                }
-            });
-        }, {
-            threshold: 0.2
-        });
-
-        tarjetasProyectos.forEach(tarjeta => {
-            observerProyectos.observe(tarjeta);
-        });
-    }
-
-    // ==========================================
-    // 3. MENÚ HAMBURGUESA MÓVIL (HEADER)
-    // ==========================================
-    const btn = document.getElementById('mobile-menu-btn');
-    const menu = document.getElementById('mobile-menu');
-
-    if (btn && menu) {
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.add('hidden');
-            });
-        });
-    }
-
-    // ==========================================
-    // 4. EVENT LISTENERS PARA CERRAR MODAL BLOG
-    // ==========================================
-    document.addEventListener('click', (e) => {
-        const modal = document.getElementById('modal-articulo');
-        const btnCerrar = document.getElementById('btn-cerrar-modal');
-
-        if (modal && !modal.classList.contains('hidden')) {
-            if (e.target === modal || (btnCerrar && btnCerrar.contains(e.target))) {
-                cerrarModalArticulo();
-            }
-        }
-    });
-
-    // Cerrar modal al presionar la tecla Escape
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            cerrarModalArticulo();
-        }
-    });
-});
-
-// ==========================================
-// 5. FUNCIÓN PARA COPIAR CORREO (FOOTER)
-// ==========================================
-function copiarEmail(email) {
-    navigator.clipboard.writeText(email).then(() => {
-        const textoBtn = document.getElementById('texto-copiar');
-        if (textoBtn) {
-            textoBtn.textContent = '¡Copiado!';
-            setTimeout(() => {
-                textoBtn.textContent = 'Copiar';
-            }, 2000);
-        }
-    }).catch(err => {
-        console.error('Error al copiar al portapapeles: ', err);
-    });
-}
-
-// ==========================================
-// 6. LÓGICA Y BASE DE DATOS DEL BLOG (MODAL)
-// ==========================================
-const articulosDB = {
+const ARTICULOS_DB = {
     'articulo-1': {
         titulo: "Buenas prácticas para estructurar Tailwind CSS en proyectos modulares",
         categoria: "Tailwind CSS",
@@ -212,25 +28,204 @@ const articulosDB = {
     }
 };
 
-function abrirArticulo(idArticulo) {
-    const articulo = articulosDB[idArticulo];
+// ==========================================
+// FUNCIÓN PARA CARGAR COMPONENTES HTML CON FALLBACK
+// ==========================================
+async function cargarComponente(idContenedor, rutaArchivo) {
+    const contenedor = document.getElementById(idContenedor);
+    if (!contenedor) return;
+
+    try {
+        const respuesta = await fetch(rutaArchivo);
+        if (!respuesta.ok) throw new Error(`Status HTTP: ${respuesta.status}`);
+        
+        const html = await respuesta.text();
+        contenedor.innerHTML = html;
+    } catch (error) {
+        console.error(`Error al cargar módulo [${rutaArchivo}]:`, error);
+        contenedor.innerHTML = `
+            <div class="p-4 text-center text-pink-700 bg-pink-50 rounded-xl border border-pink-200 my-4 text-sm">
+                ⚠️ No se pudo cargar esta sección. Por favor, recarga la página.
+            </div>
+        `;
+    }
+}
+
+// ==========================================
+// INICIALIZACIÓN DE LA APLICACIÓN
+// ==========================================
+document.addEventListener("DOMContentLoaded", async () => {
+    
+    // 1. Carga paralela de todos los módulos HTML
+    await Promise.all([
+        cargarComponente("component-header", "./components/header.html"),
+        cargarComponente("component-hero", "./components/hero.html"),
+        cargarComponente("component-habilidades", "./components/habilidades.html"),
+        cargarComponente("component-proyectos", "./components/proyectos.html"),
+        cargarComponente("component-sobre-mi", "./components/sobre-mi.html"),
+        cargarComponente("component-cv", "./components/cv-logros.html"),
+        cargarComponente("component-blog", "./components/blog.html"),
+        cargarComponente("component-footer", "./components/footer.html")
+    ]);
+
+    // 2. Inicializar módulos dependientes del DOM cargado
+    initHeroAnimation();
+    initProyectosObserver();
+    initMobileMenu();
+    initGlobalEventListeners();
+});
+
+// ==========================================
+// LÓGICA MÓDULO HERO (EFECTO MÁQUINA DE ESCRIBIR)
+// ==========================================
+function initHeroAnimation() {
+    const parte1 = "Hola, soy ";
+    const parte2 = "Iran Salazar";
+
+    const elSaludo = document.getElementById("texto-saludo");
+    const elNombre = document.getElementById("maquina-nombre");
+    const seccion = document.getElementById("seccion-hero");
+
+    if (!seccion || !elSaludo || !elNombre) return;
+
+    let timeoutIds = [];
+
+    function ejecutarEscritura() {
+        timeoutIds.forEach(id => clearTimeout(id));
+        timeoutIds = [];
+
+        elSaludo.textContent = "";
+        elNombre.textContent = "";
+
+        let cursor = document.getElementById("cursor-terminal");
+        if (!cursor) {
+            cursor = document.createElement("span");
+            cursor.id = "cursor-terminal";
+            cursor.className = "animate-pulse text-pink-600";
+            cursor.textContent = "|";
+            elSaludo.parentElement.appendChild(cursor);
+        }
+
+        let i = 0, j = 0;
+
+        function escribirSaludo() {
+            if (i < parte1.length) {
+                elSaludo.textContent += parte1.charAt(i++);
+                timeoutIds.push(setTimeout(escribirSaludo, 90));
+            } else {
+                timeoutIds.push(setTimeout(escribirNombre, 150));
+            }
+        }
+
+        function escribirNombre() {
+            if (j < parte2.length) {
+                elNombre.textContent += parte2.charAt(j++);
+                timeoutIds.push(setTimeout(escribirNombre, 110));
+            }
+        }
+
+        timeoutIds.push(setTimeout(escribirSaludo, 250));
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) ejecutarEscritura();
+        });
+    }, { threshold: 0.3 });
+
+    observer.observe(seccion);
+}
+
+// ==========================================
+// ANIMACIONES AL SCROLL (PROYECTOS)
+// ==========================================
+function initProyectosObserver() {
+    const tarjetas = document.querySelectorAll(".proyecto-card");
+    if (!tarjetas.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.remove("opacity-0", "-translate-x-10");
+            } else {
+                entry.target.classList.add("opacity-0", "-translate-x-10");
+            }
+        });
+    }, { threshold: 0.15 });
+
+    tarjetas.forEach(t => observer.observe(t));
+}
+
+// ==========================================
+// MENÚ HAMBURGUESA MÓVIL
+// ==========================================
+function initMobileMenu() {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+
+    if (!btn || !menu) return;
+
+    btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+
+    menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => menu.classList.add('hidden'));
+    });
+}
+
+// ==========================================
+// DELEGACIÓN DE EVENTOS GLOBALES (MODAL & COPIAR)
+// ==========================================
+function initGlobalEventListeners() {
+    document.addEventListener('click', (e) => {
+        
+        // 1. Abrir Modal de Artículo
+        const btnLeer = e.target.closest('[data-articulo-id]');
+        if (btnLeer) {
+            const articuloId = btnLeer.getAttribute('data-articulo-id');
+            abrirModalArticulo(articuloId);
+            return;
+        }
+
+        // 2. Cerrar Modal (clic fuera o botón X)
+        const modal = document.getElementById('modal-articulo');
+        const btnCerrar = e.target.closest('#btn-cerrar-modal');
+        if (modal && !modal.classList.contains('hidden')) {
+            if (e.target === modal || btnCerrar) {
+                cerrarModalArticulo();
+            }
+        }
+
+        // 3. Botón Copiar Email en el Footer
+        const btnCopiar = e.target.closest('#btn-copiar-email');
+        if (btnCopiar) {
+            const email = btnCopiar.getAttribute('data-email') || 'tu-correo@example.com';
+            copiarAlPortapapeles(email);
+        }
+    });
+
+    // Cerrar modal con la tecla ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') cerrarModalArticulo();
+    });
+}
+
+// ==========================================
+// FUNCIONES AUXILIARES (MODAL & CLIPBOARD)
+// ==========================================
+function abrirModalArticulo(idArticulo) {
+    const articulo = ARTICULOS_DB[idArticulo];
     if (!articulo) return;
 
-    const modalTitulo = document.getElementById('modal-titulo');
-    const modalCategoria = document.getElementById('modal-categoria');
-    const modalFecha = document.getElementById('modal-fecha');
-    const modalTiempo = document.getElementById('modal-tiempo');
-    const modalContenido = document.getElementById('modal-contenido');
+    document.getElementById('modal-titulo').textContent = articulo.titulo;
+    document.getElementById('modal-categoria').textContent = articulo.categoria;
+    document.getElementById('modal-fecha').innerHTML = `<i class="bx bx-calendar text-pink-600"></i> ${articulo.fecha}`;
+    document.getElementById('modal-tiempo').innerHTML = `<i class="bx bx-time-five text-pink-600"></i> ${articulo.tiempo}`;
+    document.getElementById('modal-contenido').innerHTML = articulo.contenido;
+
     const modal = document.getElementById('modal-articulo');
-
-    if (modalTitulo && modalCategoria && modalFecha && modalTiempo && modalContenido && modal) {
-        modalTitulo.textContent = articulo.titulo;
-        modalCategoria.textContent = articulo.categoria;
-        modalFecha.innerHTML = `<i class="bx bx-calendar text-pink-600"></i> ${articulo.fecha}`;
-        modalTiempo.innerHTML = `<i class="bx bx-time-five text-pink-600"></i> ${articulo.tiempo}`;
-        modalContenido.innerHTML = articulo.contenido;
-
+    if (modal) {
         modal.classList.remove('hidden');
+        modal.setAttribute('aria-hidden', 'false');
         document.body.classList.add('overflow-hidden');
     }
 }
@@ -239,6 +234,17 @@ function cerrarModalArticulo() {
     const modal = document.getElementById('modal-articulo');
     if (modal) {
         modal.classList.add('hidden');
+        modal.setAttribute('aria-hidden', 'true');
         document.body.classList.remove('overflow-hidden');
     }
+}
+
+function copiarAlPortapapeles(texto) {
+    navigator.clipboard.writeText(texto).then(() => {
+        const textoBtn = document.getElementById('texto-copiar');
+        if (textoBtn) {
+            textoBtn.textContent = '¡Copiado!';
+            setTimeout(() => { textoBtn.textContent = 'Copiar'; }, 2000);
+        }
+    }).catch(err => console.error('Error al copiar:', err));
 }
