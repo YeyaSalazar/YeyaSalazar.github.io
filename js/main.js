@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     
     // 1. Cargamos TODOS los componentes primero en paralelo
     await Promise.all([
-        cargarComponente("component-header", "../components/header.html"),
+        cargarComponente("component-header", "./components/header.html"),
         cargarComponente("component-hero", "./components/hero.html"),
         cargarComponente("component-habilidades", "./components/habilidades.html"),
         cargarComponente("component-proyectos", "./components/proyectos.html"),
@@ -142,3 +142,20 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 });
+
+// ==========================================
+// 4. FUNCIÓN PARA COPIAR CORREO (FOOTER)
+// ==========================================
+function copiarEmail(email) {
+    navigator.clipboard.writeText(email).then(() => {
+        const textoBtn = document.getElementById('texto-copiar');
+        if (textoBtn) {
+            textoBtn.textContent = '¡Copiado!';
+            setTimeout(() => {
+                textoBtn.textContent = 'Copiar';
+            }, 2000);
+        }
+    }).catch(err => {
+        console.error('Error al copiar al portapapeles: ', err);
+    });
+}
