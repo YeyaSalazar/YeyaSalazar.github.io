@@ -1,20 +1,49 @@
 <!-- Sección Sobre Mí -->
 <section id="sobre-mi"
-    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col md:flex-row items-center justify-between gap-10">
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col md:flex-row items-center justify-between gap-12 scroll-mt-24">
+    
+    <!-- Columna de Imagen -->
     <div class="relative flex justify-center items-center w-full md:w-1/2">
-        <img src="./assets/perfil-yeya.png" alt="Iran Salazar"
-            class="relative z-10 w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 object-contain drop-shadow-xl">
+        <!-- Decoración de fondo suave -->
+        <div class="absolute w-64 h-64 sm:w-80 sm:h-80 bg-pink-300/40 rounded-full filter blur-2xl -z-10"></div>
+        
+        <img src="./assets/perfil-yeya.png" alt="Foto de Iran Salazar"
+            class="relative z-10 w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 object-contain drop-shadow-2xl transition-transform duration-500 hover:scale-105">
     </div>
+
+    <!-- Columna de Contenido / Storytelling -->
     <div class="max-w-xl text-center md:text-left w-full md:w-1/2">
-        <h3 class="text-2xl sm:text-3xl font-bold text-pink-600 mb-4">Sobre mí</h3>
+        <h3 class="text-2xl sm:text-3xl font-bold text-pink-600 mb-4 flex items-center justify-center md:justify-start gap-2">
+            <span>Sobre mí</span>
+        </h3>
+
         <p class="text-base sm:text-lg mb-4 text-gray-800 leading-relaxed">
-            ¡Hola! Soy Iran Salazar, estudiante y apasionada del desarrollo de software. Me encanta transformar ideas
-            creativas en aplicaciones web funcionales, cuidando tanto la experiencia visual como la lógica detrás de
-            cada plataforma.
+            ¡Hola! Soy <strong class="text-pink-700 font-semibold">Iran Salazar</strong>, desarrollada de software apasionada por crear experiencias web eficientes, bien estructuradas y visualmente atractivas.
         </p>
-        <p class="text-base sm:text-lg text-gray-800 leading-relaxed">
-            Actualmente sigo ampliando mis habilidades técnicas participando en proyectos full stack e implementando
-            buenas prácticas de programación.
+
+        <p class="text-base sm:text-lg mb-6 text-gray-800 leading-relaxed">
+            Mi enfoque se centra en construir soluciones que resuelvan problemas reales, combinando lógica de programación sólida con una interfaz limpia e intuitiva. Me caracteriza la curiosidad constante, la adaptabilidad a nuevas tecnologías y el compromiso con las buenas prácticas de desarrollo.
         </p>
+
+        <!-- Pilares Profesionales (Highlight Badges) -->
+        <div class="grid grid-cols-2 gap-3 mb-8 text-left">
+            <div class="flex items-center gap-2 bg-white/70 p-3 rounded-xl border border-pink-100 shadow-sm">
+                <i class="bx bx-code-alt text-xl text-pink-600"></i>
+                <span class="text-xs sm:text-sm font-semibold text-gray-800">Código Limpio</span>
+            </div>
+            <div class="flex items-center gap-2 bg-white/70 p-3 rounded-xl border border-pink-100 shadow-sm">
+                <i class="bx bx-devices text-xl text-pink-600"></i>
+                <span class="text-xs sm:text-sm font-semibold text-gray-800">Diseño Responsivo</span>
+            </div>
+            <div class="flex items-center gap-2 bg-white/70 p-3 rounded-xl border border-pink-100 shadow-sm">
+                <i class="bx bx-layer text-xl text-pink-600"></i>
+                <span class="text-xs sm:text-sm font-semibold text-gray-800">Stack Moderno</span>
+            </div>
+            <div class="flex items-center gap-2 bg-white/70 p-3 rounded-xl border border-pink-100 shadow-sm">
+                <i class="bx bx-rocket text-xl text-pink-600"></i>
+                <span class="text-xs sm:text-sm font-semibold text-gray-800">Aprendizaje Continuo</span>
+            </div>
+        </div>
+
     </div>
 </section>
