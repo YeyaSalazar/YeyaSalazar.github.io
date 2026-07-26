@@ -1,0 +1,179 @@
+<!-- Sección de Blog -->
+<section id="blog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 scroll-mt-28">
+
+    <!-- Encabezado de la Sección -->
+    <div class="mb-10 text-center sm:text-left">
+        <h3
+            class="text-2xl sm:text-3xl font-bold text-pink-600 mb-2 flex items-center justify-center sm:justify-start gap-2">
+            <span>Blog & Artículos</span>
+        </h3>
+        <p class="text-base text-gray-700">Compartiendo aprendizajes, guías técnicas y reflexiones sobre desarrollo de
+            software.</p>
+    </div>
+
+    <!-- Grid de Entradas de Blog -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Artículo 1 -->
+        <article
+            class="bg-white rounded-2xl border border-pink-100 shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col justify-between group">
+            <div>
+                <!-- Imagen de Portada con Badge de Categoría -->
+                <div class="relative overflow-hidden h-48 sm:h-52">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=600&auto=format&fit=crop"
+                        alt="Optimización en Tailwind CSS"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <span
+                        class="absolute top-3 right-3 bg-pink-600/90 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                        Tailwind CSS
+                    </span>
+                </div>
+
+                <!-- Contenido -->
+                <div class="p-6">
+                    <div class="flex items-center gap-4 text-xs text-gray-500 mb-3 font-medium">
+                        <span class="flex items-center gap-1"><i class="bx bx-calendar text-pink-600"></i> Jul
+                            2026</span>
+                        <span class="flex items-center gap-1"><i class="bx bx-time-five text-pink-600"></i> 4 min de
+                            lectura</span>
+                    </div>
+
+                    <h4 class="text-xl font-bold text-gray-900 group-hover:text-pink-600 transition mb-2 leading-snug">
+                        Buenas prácticas para estructurar Tailwind CSS en proyectos modulares
+                    </h4>
+
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Aprende a mantener tus clases ordenadas y componentes limpios al escalar tus aplicaciones
+                        frontend.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Footer de la Tarjeta -->
+            <div class="px-6 pb-6 pt-2 border-t border-gray-100/80">
+                <button onclick="abrirArticulo('articulo-1')"
+                    class="inline-flex items-center gap-1.5 text-pink-600 font-bold text-sm hover:text-pink-700 transition cursor-pointer">
+                    <span>Leer artículo completo</span>
+                    <i class="bx bx-right-arrow-alt text-lg group-hover:translate-x-1 transition duration-200"></i>
+                </button>
+            </div>
+        </article>
+
+        <!-- Artículo 2 -->
+        <article
+            class="bg-white rounded-2xl border border-pink-100 shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col justify-between group">
+            <div>
+                <div class="relative overflow-hidden h-48 sm:h-52">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=600&auto=format&fit=crop"
+                        alt="JavaScript Asíncrono"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                    <span
+                        class="absolute top-3 right-3 bg-pink-600/90 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
+                        JavaScript
+                    </span>
+                </div>
+
+                <div class="p-6">
+                    <div class="flex items-center gap-4 text-xs text-gray-500 mb-3 font-medium">
+                        <span class="flex items-center gap-1"><i class="bx bx-calendar text-pink-600"></i> Jun
+                            2026</span>
+                        <span class="flex items-center gap-1"><i class="bx bx-time-five text-pink-600"></i> 6 min de
+                            lectura</span>
+                    </div>
+
+                    <h4 class="text-xl font-bold text-gray-900 group-hover:text-pink-600 transition mb-2 leading-snug">
+                        Entendiendo el Event Loop y Promesas en JavaScript
+                    </h4>
+
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Una guía visual e intuitiva para comprender cómo JavaScript maneja la asincronía y el
+                        renderizado en el navegador.
+                    </p>
+                </div>
+            </div>
+
+            <div class="px-6 pb-6 pt-2 border-t border-gray-100/80">
+                <a href="#"
+                    class="inline-flex items-center gap-1.5 text-pink-600 font-bold text-sm hover:text-pink-700 transition">
+                    <span>Leer artículo completo</span>
+                    <i class="bx bx-right-arrow-alt text-lg group-hover:translate-x-1 transition duration-200"></i>
+                </a>
+            </div>
+        </article>
+
+        <!-- Artículo 3 (Próximamente / Borrador) -->
+        <article
+            class="bg-white rounded-2xl border border-pink-100 shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col justify-between group">
+            <div>
+                <div class="relative overflow-hidden h-48 sm:h-52 bg-gray-900">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=600&auto=format&fit=crop"
+                        alt="Arquitectura Web"
+                        class="w-full h-full object-cover opacity-60 transition-transform duration-500 group-hover:scale-105">
+                    <span
+                        class="absolute top-3 right-3 bg-amber-500/90 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
+                        <i class="bx bx-pencil"></i> Próximamente
+                    </span>
+                </div>
+
+                <div class="p-6">
+                    <div class="flex items-center gap-4 text-xs text-gray-500 mb-3 font-medium">
+                        <span class="flex items-center gap-1"><i class="bx bx-time-five text-pink-600"></i> En
+                            redacción</span>
+                    </div>
+
+                    <h4 class="text-xl font-bold text-gray-900 mb-2 leading-snug">
+                        De Vanilla JS a Frameworks Modernos: ¿Cuándo dar el salto?
+                    </h4>
+
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Reflexión técnica sobre los fundamentos del DOM y las razones clave para adoptar herramientas
+                        como React o Vue.
+                    </p>
+                </div>
+            </div>
+
+            <div class="px-6 pb-6 pt-2 border-t border-gray-100/80">
+                <span class="text-gray-400 font-medium text-sm flex items-center gap-1">
+                    <i class="bx bx-lock-alt"></i> Disponible pronto
+                </span>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<!-- Modal para Leer Artículo Completo -->
+<div id="modal-articulo"
+    class="fixed inset-0 z-50 hidden bg-gray-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div
+        class="bg-white rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl border border-pink-100 p-6 sm:p-8 relative animate-fade-in">
+
+        <!-- Botón para Cerrar -->
+        <button id="btn-cerrar-modal"
+            class="absolute top-4 right-4 text-gray-400 hover:text-pink-600 bg-gray-100 hover:bg-pink-100 p-2 rounded-xl transition">
+            <i class="bx bx-x text-2xl"></i>
+        </button>
+
+        <!-- Cabecera del Artículo en el Modal -->
+        <span id="modal-categoria"
+            class="inline-block bg-pink-100 text-pink-700 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+            Categoría
+        </span>
+        <h3 id="modal-titulo" class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+            Título del Artículo
+        </h3>
+
+        <!-- Meta info -->
+        <div class="flex items-center gap-4 text-xs text-gray-500 mb-6 border-b border-gray-100 pb-4">
+            <span id="modal-fecha" class="flex items-center gap-1"><i class="bx bx-calendar text-pink-600"></i>
+                Fecha</span>
+            <span id="modal-tiempo" class="flex items-center gap-1"><i class="bx bx-time-five text-pink-600"></i>
+                Tiempo</span>
+        </div>
+
+        <!-- Contenido del Artículo -->
+        <div id="modal-contenido" class="text-gray-700 text-base leading-relaxed space-y-4">
+            <!-- El texto completo del artículo se inyecta por JS -->
+        </div>
+    </div>
+</div>

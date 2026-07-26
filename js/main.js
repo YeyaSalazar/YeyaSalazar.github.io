@@ -20,7 +20,7 @@ async function cargarComponente(idContenedor, rutaArchivo) {
 
 // Marcamos el callback de DOMContentLoaded como ASYNC
 document.addEventListener("DOMContentLoaded", async () => {
-    
+
     // 1. Cargamos TODOS los componentes primero en paralelo
     await Promise.all([
         cargarComponente("component-header", "./components/header.html"),
@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         cargarComponente("component-proyectos", "./components/proyectos.html"),
         cargarComponente("component-sobre-mi", "./components/sobre-mi.html"),
         cargarComponente("component-cv", "./components/cv-logros.html"),
+        cargarComponente("component-blog", "./components/blog.html"),
         cargarComponente("component-footer", "./components/footer.html")
     ]);
 
@@ -141,10 +142,31 @@ document.addEventListener("DOMContentLoaded", async () => {
             });
         });
     }
+
+    // ==========================================
+    // 4. EVENT LISTENERS PARA CERRAR MODAL BLOG
+    // ==========================================
+    document.addEventListener('click', (e) => {
+        const modal = document.getElementById('modal-articulo');
+        const btnCerrar = document.getElementById('btn-cerrar-modal');
+
+        if (modal && !modal.classList.contains('hidden')) {
+            if (e.target === modal || (btnCerrar && btnCerrar.contains(e.target))) {
+                cerrarModalArticulo();
+            }
+        }
+    });
+
+    // Cerrar modal al presionar la tecla Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            cerrarModalArticulo();
+        }
+    });
 });
 
 // ==========================================
-// 4. FUNCIÓN PARA COPIAR CORREO (FOOTER)
+// 5. FUNCIÓN PARA COPIAR CORREO (FOOTER)
 // ==========================================
 function copiarEmail(email) {
     navigator.clipboard.writeText(email).then(() => {
@@ -158,4 +180,65 @@ function copiarEmail(email) {
     }).catch(err => {
         console.error('Error al copiar al portapapeles: ', err);
     });
+}
+
+// ==========================================
+// 6. LÓGICA Y BASE DE DATOS DEL BLOG (MODAL)
+// ==========================================
+const articulosDB = {
+    'articulo-1': {
+        titulo: "Buenas prácticas para estructurar Tailwind CSS en proyectos modulares",
+        categoria: "Tailwind CSS",
+        fecha: "Jul 2026",
+        tiempo: "4 min de lectura",
+        contenido: `
+            <p>Al construir aplicaciones escalables con Tailwind CSS, uno de los desafíos más comunes es mantener el HTML limpio sin terminar con clases interminables y repetitivas.</p>
+            <h4 class="text-lg font-bold text-pink-600 mt-4 mb-2">1. Reutilización con Módulos y Componentes</h4>
+            <p>En lugar de abusar de la directiva <code>@apply</code> en CSS, la mejor práctica en proyectos web es separar las secciones en componentes HTML independientes cargados dinámicamente o mediante frameworks.</p>
+            <h4 class="text-lg font-bold text-pink-600 mt-4 mb-2">2. Uso de Flexbox y Grid Flexibles</h4>
+            <p>Aprovecha las utilidades de espacio como <code>gap-*</code> en lugar de márgenes individuales (<code>mb-*</code>) para mantener proporciones matemáticamente idénticas.</p>
+        `
+    },
+    'articulo-2': {
+        titulo: "Entendiendo el Event Loop y Promesas en JavaScript",
+        categoria: "JavaScript",
+        fecha: "Jun 2026",
+        tiempo: "6 min de lectura",
+        contenido: `
+            <p>JavaScript es un lenguaje de un solo hilo (single-threaded), lo que significa que solo puede ejecutar una tarea a la vez. ¿Cómo maneja entonces peticiones asíncronas sin congelar la pantalla?</p>
+            <h4 class="text-lg font-bold text-pink-600 mt-4 mb-2">La pila de llamadas (Call Stack) y Microtareas</h4>
+            <p>Las promesas y los bloques <code>async/await</code> ingresan a la cola de microtareas, ejecutándose inmediatamente después de que el Call Stack se vacía.</p>
+        `
+    }
+};
+
+function abrirArticulo(idArticulo) {
+    const articulo = articulosDB[idArticulo];
+    if (!articulo) return;
+
+    const modalTitulo = document.getElementById('modal-titulo');
+    const modalCategoria = document.getElementById('modal-categoria');
+    const modalFecha = document.getElementById('modal-fecha');
+    const modalTiempo = document.getElementById('modal-tiempo');
+    const modalContenido = document.getElementById('modal-contenido');
+    const modal = document.getElementById('modal-articulo');
+
+    if (modalTitulo && modalCategoria && modalFecha && modalTiempo && modalContenido && modal) {
+        modalTitulo.textContent = articulo.titulo;
+        modalCategoria.textContent = articulo.categoria;
+        modalFecha.innerHTML = `<i class="bx bx-calendar text-pink-600"></i> ${articulo.fecha}`;
+        modalTiempo.innerHTML = `<i class="bx bx-time-five text-pink-600"></i> ${articulo.tiempo}`;
+        modalContenido.innerHTML = articulo.contenido;
+
+        modal.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+    }
+}
+
+function cerrarModalArticulo() {
+    const modal = document.getElementById('modal-articulo');
+    if (modal) {
+        modal.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+    }
 }
