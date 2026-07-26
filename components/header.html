@@ -1,35 +1,44 @@
-<!-- Header / Navbar -->
-<header class="sticky top-0 z-50 bg-pink-200/90 backdrop-blur-md shadow-sm border-b border-pink-300/40">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
-        <a href="#" class="text-xl font-bold text-pink-600 hover:scale-105 transition duration-300 inline-block">Iran
-            Dev</a>
+<!-- Header / Navbar Fijo -->
+<header class="fixed top-0 left-0 w-full z-50 bg-pink-200/85 backdrop-blur-md shadow-sm border-b border-pink-300/50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16 sm:h-20">
+        
+        <!-- Logo / Marca Personal -->
+        <a href="#seccion-hero" class="group flex items-center gap-2 focus:outline-none">
+            <span class="text-xl sm:text-2xl font-black tracking-tight text-pink-700 group-hover:text-pink-600 transition duration-300">
+                Iran<span class="text-pink-500 font-light"> Salazar</span>
+            </span>
+            <span class="inline-block w-2 h-2 rounded-full bg-pink-500 group-hover:scale-125 transition duration-300"></span>
+        </a>
 
         <!-- Menú Desktop -->
-        <nav class="space-x-6 hidden md:flex items-center text-sm font-medium">
-            <a href="#proyectos" class="hover:text-pink-700 hover:scale-105 transition duration-200">Proyectos</a>
-            <a href="#sobre-mi" class="hover:text-pink-700 hover:scale-105 transition duration-200">Sobre mí</a>
-            <a href="#mi-cv" class="hover:text-pink-700 hover:scale-105 transition duration-200">Mi CV</a>
-            <a href="#contacto" class="hover:text-pink-700 hover:scale-105 transition duration-200">Contacto</a>
+        <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 text-sm font-semibold text-pink-950">
+            <a href="#proyectos" class="px-3 py-2 rounded-lg hover:text-pink-600 hover:bg-white/40 transition duration-200">Proyectos</a>
+            <a href="#sobre-mi" class="px-3 py-2 rounded-lg hover:text-pink-600 hover:bg-white/40 transition duration-200">Sobre mí</a>
+            <a href="#mi-cv" class="px-3 py-2 rounded-lg hover:text-pink-600 hover:bg-white/40 transition duration-200">Experiencia / CV</a>
+            
+            <!-- Botón CTA destacado -->
+            <a href="#contacto" class="ml-4 inline-flex items-center justify-center bg-pink-600 hover:bg-pink-700 text-white font-medium px-4 py-2 rounded-xl shadow-sm hover:shadow-md transition duration-200 transform hover:-translate-y-0.5">
+                Contacto
+            </a>
         </nav>
 
-        <!-- Botón Menú Móvil (Hamburguesa) -->
-        <button id="mobile-menu-btn" aria-label="Abrir menú"
-            class="md:hidden text-pink-700 hover:text-pink-900 focus:outline-none p-2 rounded-lg">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
-                </path>
+        <!-- Botón Menú Móvil -->
+        <button id="mobile-menu-btn" type="button" aria-label="Abrir menú de navegación"
+            class="md:hidden text-pink-800 hover:text-pink-950 hover:bg-white/50 focus:outline-none p-2 rounded-xl transition">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
         </button>
     </div>
 
-
     <!-- Menú Desplegable Móvil -->
     <div id="mobile-menu"
-        class="hidden md:hidden bg-pink-100/95 border-b border-pink-300 px-4 pt-2 pb-4 space-y-3 font-medium">
-        <a href="#proyectos" class="block text-gray-800 hover:text-pink-600 transition">Proyectos</a>
-        <a href="#sobre-mi" class="block text-gray-800 hover:text-pink-600 transition">Sobre mí</a>
-        <a href="#mi-cv" class="block text-gray-800 hover:text-pink-600 transition">Mi CV</a>
-        <a href="#contacto" class="block text-gray-800 hover:text-pink-600 transition">Contacto</a>
+        class="hidden md:hidden bg-pink-100/95 backdrop-blur-lg border-b border-pink-300/60 px-6 pt-3 pb-6 space-y-3 font-semibold shadow-xl">
+        <a href="#proyectos" class="block text-pink-950 hover:text-pink-600 hover:translate-x-1 transition duration-200 py-1">Proyectos</a>
+        <a href="#sobre-mi" class="block text-pink-950 hover:text-pink-600 hover:translate-x-1 transition duration-200 py-1">Sobre mí</a>
+        <a href="#mi-cv" class="block text-pink-950 hover:text-pink-600 hover:translate-x-1 transition duration-200 py-1">Experiencia / CV</a>
+        <a href="#contacto" class="block text-center bg-pink-600 hover:bg-pink-700 text-white font-medium py-2.5 rounded-xl shadow-sm transition duration-200 mt-2">
+            Contacto
+        </a>
     </div>
 </header>
