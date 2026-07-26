@@ -4,52 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio Iran Salazar</title>
+    <title>Mi Portafolio - Iran Salazar</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="./css/styles.css">
+    <!-- Tailwind CSS Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-gradient-to-br from-pink-200 to-pink-400 backdrop-blur-sm text-neutral-900 font-sans">
 
     <!-- Header / Navbar -->
-    <header class="sticky top-0 z-50 bg-pink-200 shadow flex justify-between items-center px-8 py-6  mx-auto">
-        <a href="#" class="text-xl font-bold text-pink-500 hover:scale-110 transition duration-300 inline-block">Iran
-            Dev</a>
-        <nav class="space-x-6">
-            <a href="#proyectos"
-                class="hover:text-pink-700 hover:scale-110 transition duration-300 inline-block">Proyectos</a>
-            <a href="#sobre-mi" class="hover:text-pink-700 hover:scale-110 transition duration-300 inline-block">Sobre
-                mí</a>
+    <header class="sticky top-0 z-50 bg-pink-200/90 backdrop-blur-md shadow flex justify-between items-center px-8 py-6 mx-auto">
+        <a href="#" class="text-xl font-bold text-pink-600 hover:scale-110 transition duration-300 inline-block">Iran Dev</a>
+        <nav class="space-x-6 hidden md:block">
+            <a href="#proyectos" class="hover:text-pink-700 hover:scale-110 transition duration-300 inline-block">Proyectos</a>
+            <a href="#sobre-mi" class="hover:text-pink-700 hover:scale-110 transition duration-300 inline-block">Sobre mí</a>
             <a href="#mi-cv" class="hover:text-pink-700 hover:scale-110 transition duration-300 inline-block">Mi CV</a>
-            <a href="#sobre-mi"
-                class="hover:text-pink-700 hover:scale-110 transition duration-300 inline-block">Blog</a>
-            <a href="#contacto"
-                class="hover:text-pink-700 hover:scale-110 transition duration-300 inline-block">Contacto</a>
+            <a href="#mi-cv" class="hover:text-pink-700 hover:scale-110 transition duration-300 inline-block">Blog</a>
+            <a href="#contacto" class="hover:text-pink-700 hover:scale-110 transition duration-300 inline-block">Contacto</a>
         </nav>
     </header>
 
     <!-- Sección Hero (Presentación) -->
-    <section id="seccion-hero"
-        class="flex flex-col md:flex-row items-center justify-between text-center md:text-left pt-20 w-[80%] mx-auto">
+    <section id="seccion-hero" class="flex flex-col md:flex-row items-center justify-between text-center md:text-left pt-20 w-[80%] mx-auto min-h-[80vh]">
         <div class="max-w-xl">
-            <h2 class="text-4xl md:text-6xl font-extrabold mb-4">
-                <span id="texto-saludo"></span><span class="text-pink-500"><span id="maquina-nombre"></span></span><span
-                    id="cursor-terminal" class="animate-pulse text-pink-500">|</span>
+            <h2 class="text-4xl md:text-6xl font-extrabold mb-4 min-h-[4rem]">
+                <span id="texto-saludo"></span><span class="text-pink-600"><span id="maquina-nombre"></span></span><span id="cursor-terminal" class="animate-pulse text-pink-600">|</span>
             </h2>
-            <p class="text-2xl text-gray-600 mb-5 italic font-serif">Desarrolladora de software</p>
-            <p class="text-lg mb-5 text-gray-700">Desarrollador web enfocado en crear soluciones limpias, funcionales y
-                atractivas.</p>
-            <a href="#proyectos"
-                class="inline-block bg-pink-400 hover:bg-pink-500 text-white font-semibold px-6 py-3 rounded-lg transition mb-5">Ver
-                Proyectos</a>
+            <p class="text-2xl text-pink-700 mb-5 italic font-serif">Desarrolladora de Software Full Stack</p>
+            <p class="text-lg mb-6 text-gray-700">Enfocada en crear soluciones web limpias, funcionales y atractivas, integrando tecnologías modernas.</p>
+            <a href="#proyectos" class="inline-block bg-pink-500 hover:bg-pink-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md transition mb-5">Ver Proyectos</a>
         </div>
-        <div class="flex relative flex justify-center items-center mt-10 md:mt-0">
-            <img src="/assets/perfil-yeya.png" class="relative z-10 w-72 h-72 md:w-96 md:h-96 object-contain block">
+        <div class="relative flex justify-center items-center mt-10 md:mt-0">
+            <img src="./assets/perfil-yeya.png" alt="Foto de perfil de Iran Salazar" class="relative z-10 w-72 h-72 md:w-96 md:h-96 object-contain block">
         </div>
     </section>
 
-    <!-- Sección de Tecnologías con Carrusel Infinito y Efecto Relieve/Desvanecimiento -->
-    <section class="py-5 bg-gradient-to-r from-pink-300 via-pink-400 to-pink-300 shadow-inner overflow-hidden mb-10">
+    <!-- Sección de Tecnologías con Carrusel Infinito -->
+    <section class="py-6 bg-gradient-to-r from-pink-300 via-pink-400 to-pink-300 shadow-inner overflow-hidden mb-16">
         <div class="w-[80%] mx-auto mb-6 text-center md:text-left">
             <h3 class="text-2xl text-white font-bold">Habilidades técnicas</h3>
         </div>
@@ -58,58 +50,48 @@
             <div class="flex w-max animate-infinite-scroll space-x-12 items-center">
                 <!-- GRUPO 1 DE ICONOS -->
                 <div class="flex items-center space-x-12 shrink-0">
-                    <div
-                        class="flex items-center space-x-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/50">
-                        <img src="/assets/tailwind-logo.webp" class="w-8 h-8 object-contain">
+                    <div class="flex items-center space-x-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/50">
+                        <img src="./assets/tailwind-logo.webp" alt="Tailwind" class="w-8 h-8 object-contain">
                         <span class="font-semibold text-pink-950">Tailwind CSS</span>
                     </div>
-                    <div
-                        class="flex items-center space-x-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/50">
-                        <img src="/assets/tailwind-logo.webp" class="w-8 h-8 object-contain">
+                    <div class="flex items-center space-x-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/50">
+                        <img src="./assets/tailwind-logo.webp" alt="JavaScript" class="w-8 h-8 object-contain">
                         <span class="font-semibold text-pink-950">JavaScript</span>
                     </div>
-                    <div
-                        class="flex items-center space-x-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/50">
-                        <img src="/assets/tailwind-logo.webp" class="w-8 h-8 object-contain">
+                    <div class="flex items-center space-x-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/50">
+                        <img src="./assets/tailwind-logo.webp" alt="HTML5" class="w-8 h-8 object-contain">
                         <span class="font-semibold text-pink-950">HTML5</span>
                     </div>
-                    <div
-                        class="flex items-center space-x-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/50">
-                        <img src="/assets/tailwind-logo.webp" class="w-8 h-8 object-contain">
+                    <div class="flex items-center space-x-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/50">
+                        <img src="./assets/tailwind-logo.webp" alt="CSS3" class="w-8 h-8 object-contain">
                         <span class="font-semibold text-pink-950">CSS3</span>
                     </div>
-                    <div
-                        class="flex items-center space-x-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/50">
-                        <img src="/assets/tailwind-logo.webp" class="w-8 h-8 object-contain">
+                    <div class="flex items-center space-x-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/50">
+                        <img src="./assets/tailwind-logo.webp" alt="Git" class="w-8 h-8 object-contain">
                         <span class="font-semibold text-pink-950">Git</span>
                     </div>
                 </div>
 
-                <!-- GRUPO 2 DE ICONOS (Duplicado exacto para lograr el bucle infinito sin saltos) -->
+                <!-- GRUPO 2 DE ICONOS (Duplicado para efecto infinito fluido) -->
                 <div class="flex items-center space-x-12 shrink-0" aria-hidden="true">
-                    <div
-                        class="flex items-center space-x-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/50">
-                        <img src="/assets/tailwind-logo.webp" class="w-8 h-8 object-contain">
+                    <div class="flex items-center space-x-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/50">
+                        <img src="./assets/tailwind-logo.webp" alt="Tailwind" class="w-8 h-8 object-contain">
                         <span class="font-semibold text-pink-950">Tailwind CSS</span>
                     </div>
-                    <div
-                        class="flex items-center space-x-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/50">
-                        <img src="/assets/tailwind-logo.webp" class="w-8 h-8 object-contain">
+                    <div class="flex items-center space-x-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/50">
+                        <img src="./assets/tailwind-logo.webp" alt="JavaScript" class="w-8 h-8 object-contain">
                         <span class="font-semibold text-pink-950">JavaScript</span>
                     </div>
-                    <div
-                        class="flex items-center space-x-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/50">
-                        <img src="/assets/tailwind-logo.webp" class="w-8 h-8 object-contain">
+                    <div class="flex items-center space-x-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/50">
+                        <img src="./assets/tailwind-logo.webp" alt="HTML5" class="w-8 h-8 object-contain">
                         <span class="font-semibold text-pink-950">HTML5</span>
                     </div>
-                    <div
-                        class="flex items-center space-x-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/50">
-                        <img src="/assets/tailwind-logo.webp" class="w-8 h-8 object-contain">
+                    <div class="flex items-center space-x-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/50">
+                        <img src="./assets/tailwind-logo.webp" alt="CSS3" class="w-8 h-8 object-contain">
                         <span class="font-semibold text-pink-950">CSS3</span>
                     </div>
-                    <div
-                        class="flex items-center space-x-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/50">
-                        <img src="/assets/tailwind-logo.webp" class="w-8 h-8 object-contain">
+                    <div class="flex items-center space-x-2 bg-white/40 backdrop-blur-md px-4 py-2 rounded-xl shadow-md border border-white/50">
+                        <img src="./assets/tailwind-logo.webp" alt="Git" class="w-8 h-8 object-contain">
                         <span class="font-semibold text-pink-950">Git</span>
                     </div>
                 </div>
@@ -118,155 +100,118 @@
     </section>
 
     <!-- Sección de Proyectos -->
-    <section id="proyectos" class="w-[80%] mx-auto mb-8 scroll-mt-20">
-        <h3 class="text-3xl font-bold text-pink-500 mb-2">Mis Proyectos</h3>
-        <p class="text-l text-gray-600 mb-8">Coleccion de proyectos realizados</p>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <section id="proyectos" class="w-[80%] mx-auto mb-20 scroll-mt-28">
+        <div class="mb-8">
+            <h3 class="text-3xl font-bold text-pink-600 mb-2">Mis Proyectos</h3>
+            <p class="text-base text-gray-700">Colección de proyectos reales enfocados en soluciones web</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
             <!-- Tarjeta de Proyecto 1 -->
-            <div class="bg-white rounded-xl shadow-xl">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNe1izW29mPYO-8QmFE9R1rhywWE7iaJ0rbKMGOiiDvA&s=10"
-                    class="h-[250px] w-full rounded-[2%_2%_0_0] mb-3">
-                <div class="p-6">
-                    <h4 class="text-xl font-bold mb-2 text-pink-500">Proyecto 1</h4>
-                    <p class="text-gray-700 mb-4">Descripción breve de qué hace el proyecto y qué tecnologías usaste.
-                    </p>
-                    <a href="#" class="text-pink-400 hover:underline font-medium">Ver repositorio &rarr;</a>
+            <div class="proyecto-card opacity-0 -translate-x-10 transition-all duration-700 ease-out bg-white rounded-2xl shadow-xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl flex flex-col justify-between border border-pink-100">
+                <div>
+                    <div class="overflow-hidden h-[200px]">
+                        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=500&auto=format&fit=crop" alt="Yeya's Little Shop" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2 text-pink-600">Yeya's Little Shop</h4>
+                        <p class="text-gray-600 text-sm mb-4">Plataforma de comercio electrónico diseñada para la venta de joyería artesanal y accesorios temáticos.</p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-2">
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-pink-100 text-pink-700 border border-pink-200">HTML5</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-pink-100 text-pink-700 border border-pink-200">Tailwind CSS</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-pink-100 text-pink-700 border border-pink-200">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="px-6 pb-6 pt-0 flex items-center justify-between gap-3 border-t border-gray-100 pt-4">
+                    <a href="#" target="_blank" class="flex-1 text-center bg-pink-500 hover:bg-pink-600 text-white text-sm font-medium py-2 px-4 rounded-lg transition shadow-sm">Ver Demo</a>
+                    <a href="#" target="_blank" class="flex-1 text-center bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-medium py-2 px-4 rounded-lg transition">Código &rarr;</a>
                 </div>
             </div>
+
+            <!-- Tarjeta de Proyecto 2 -->
+            <div class="proyecto-card opacity-0 -translate-x-10 transition-all duration-700 ease-out delay-200 bg-white rounded-2xl shadow-xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl flex flex-col justify-between border border-pink-100">
+                <div>
+                    <div class="overflow-hidden h-[200px]">
+                        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=500&auto=format&fit=crop" alt="Portafolio Web" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2 text-pink-600">Portafolio Web</h4>
+                        <p class="text-gray-600 text-sm mb-4">Sitio web personal interactivo con animaciones fluidas y diseño responsivo adaptado a dispositivos móviles.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-pink-100 text-pink-700 border border-pink-200">Tailwind</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-pink-100 text-pink-700 border border-pink-200">JS Interactivo</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-6 pb-6 pt-0 flex items-center justify-between gap-3 border-t border-gray-100 pt-4">
+                    <a href="#" target="_blank" class="flex-1 text-center bg-pink-500 hover:bg-pink-600 text-white text-sm font-medium py-2 px-4 rounded-lg transition shadow-sm">Ver Demo</a>
+                    <a href="#" target="_blank" class="flex-1 text-center bg-gray-100 hover:bg-gray-200 text-gray-800 text-sm font-medium py-2 px-4 rounded-lg transition">Código &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta de Proyecto 3 -->
+            <div class="proyecto-card opacity-0 -translate-x-10 transition-all duration-700 ease-out delay-400 bg-white rounded-2xl shadow-xl overflow-hidden hover:-translate-y-2 hover:shadow-2xl flex flex-col justify-between border border-pink-100">
+                <div>
+                    <div class="overflow-hidden h-[200px]">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=500&auto=format&fit=crop" alt="Próximo proyecto" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2 text-pink-600">Proyecto Próximamente</h4>
+                        <p class="text-gray-600 text-sm mb-4">Espacio reservado para el próximo desarrollo de software integrando bases de datos y lógica avanzada.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-500 border border-gray-200">En desarrollo</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-6 pb-6 pt-0 flex items-center justify-between gap-3 border-t border-gray-100 pt-4">
+                    <span class="w-full text-center text-gray-400 text-sm py-2">Próximamente</span>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- Sección de Sobre mi -->
-    <section id="sobre-mi"
-        class="flex flex-col md:flex-row items-center justify-between text-start md:text-left py-20 w-[80%] mx-auto">
-        <div class="flex relative flex justify-center items-center mt-10 md:mt-0 mb-8">
-            <img src="/assets/perfil-yeya.png" class="relative z-10 w-72 h-72 md:w-96 md:h-96 object-contain block">
+    <!-- Sección de Sobre mí -->
+    <section id="sobre-mi" class="flex flex-col md:flex-row items-center justify-between py-20 w-[80%] mx-auto gap-10">
+        <div class="relative flex justify-center items-center">
+            <img src="./assets/perfil-yeya.png" alt="Iran Salazar" class="relative z-10 w-72 h-72 md:w-96 md:h-96 object-contain block">
         </div>
         <div class="max-w-xl">
-            <h3 class="text-3xl font-bold text-pink-500 mb-2">Sobre mí</h3>
-            <p class="text-lg mb-5 text-gray-800">Desarrollador web enfocado en crear soluciones limpias, funcionales y
-                atractivas.</p>
+            <h3 class="text-3xl font-bold text-pink-600 mb-4">Sobre mí</h3>
+            <p class="text-lg mb-4 text-gray-800 leading-relaxed">
+                ¡Hola! Soy Iran Salazar, estudiante y apasionada del desarrollo de software. Me encanta transformar ideas creativas en aplicaciones web funcionales, cuidando tanto la experiencia visual como la lógica detrás de cada plataforma.
+            </p>
+            <p class="text-lg text-gray-800 leading-relaxed">
+                Actualmente sigo ampliando mis habilidades técnicas participando en proyectos full stack e implementando buenas prácticas de programación.
+            </p>
         </div>
     </section>
 
-    <!-- Sección de Mi CV -->
-    <section id="mi-cv" class="w-[80%] mx-auto mb-8">
-        <h3 class="text-3xl font-bold text-pink-500 mb-2">Mi CV</h3>
-        <p class="text-l text-gray-600 mb-8">Una Descripción sobre mi y mis logros</p>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
-            <!-- Tarjeta de Proyecto 1 -->
-            <div class="bg-white rounded-xl shadow-xl p-6">
-                <img src="https://static.vecteezy.com/system/resources/previews/030/972/937/non_2x/achievement-icon-vector.jpg"
-                    class="w-13 h-10 mb-2">
-                <h4 class="text-xl font-bold mb-2">Logro 1</h4>
-                <p class="text-gray-800 mb-4">Descripción breve de qué hace el proyecto y qué tecnologías usaste.</p>
+    <!-- Sección de Mi CV / Logros -->
+    <section id="mi-cv" class="w-[80%] mx-auto mb-20 scroll-mt-28">
+        <h3 class="text-3xl font-bold text-pink-600 mb-2">Mi CV y Logros</h3>
+        <p class="text-base text-gray-600 mb-8">Un recorrido por mis metas cumplidas y certificaciones</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-xl shadow-xl p-6 border border-pink-100">
+                <div class="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center text-pink-600 font-bold text-xl mb-4">🏆</div>
+                <h4 class="text-xl font-bold mb-2 text-neutral-800">Desarrollo Full Stack</h4>
+                <p class="text-gray-600 text-sm">Participación activa en curso especializado creando soluciones de e-commerce y control de versiones con Git.</p>
             </div>
         </div>
     </section>
 
     <!-- Footer / Contacto -->
-    <footer id="contacto" class="text-center py-12 border-t border-slate-800 mt-20">
-        <p class="text-slate-400 mb-4">¿Te interesa trabajar conmigo? ¡Contáctame!</p>
-        <a href="mailto:tu-correo@example.com"
-            class="text-cyan-400 font-semibold hover:underline">tu-correo@example.com</a>
+    <footer id="contacto" class="text-center py-12 border-t border-pink-300 bg-pink-200/50 mt-20">
+        <p class="text-pink-900 font-medium mb-2">¿Te interesa trabajar conmigo? ¡Contáctame!</p>
+        <a href="mailto:tu-correo@example.com" class="text-pink-600 font-bold hover:underline text-lg">tu-correo@example.com</a>
     </footer>
 
-    <style>
-        @keyframes scrollInfinito {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-
-        .animate-infinite-scroll {
-            animation: scrollInfinito 25s linear infinite;
-        }
-
-        /* Efecto relieve / desvanecimiento en los bordes (máscara CSS) */
-        .mask-fade {
-            mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-            -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-        }
-    </style>
-
-    <!-- Script corregido -->
-    <script>
-        // Nos aseguramos de que el DOM esté completamente cargado
-        window.addEventListener("DOMContentLoaded", () => {
-            const parte1 = "Hola, soy ";
-            const parte2 = "Iran Salazar";
-
-            const elSaludo = document.getElementById("texto-saludo");
-            const elNombre = document.getElementById("maquina-nombre");
-            const seccion = document.getElementById("seccion-hero");
-
-            if (!seccion || !elSaludo || !elNombre) {
-                console.error("No se encontraron los elementos en el DOM.");
-                return;
-            }
-
-            let timeoutIds = [];
-
-            function reiniciarYEjecutar() {
-                timeoutIds.forEach(id => clearTimeout(id));
-                timeoutIds = [];
-
-                elSaludo.textContent = "";
-                elNombre.textContent = "";
-
-                let cursor = document.getElementById("cursor-terminal");
-                if (!cursor) {
-                    const h2 = elSaludo.parentElement;
-                    cursor = document.createElement("span");
-                    cursor.id = "cursor-terminal";
-                    cursor.className = "animate-pulse text-pink-500";
-                    cursor.textContent = "|";
-                    h2.appendChild(cursor);
-                }
-
-                let i = 0;
-                let j = 0;
-
-                function escribirSaludo() {
-                    if (i < parte1.length) {
-                        elSaludo.textContent += parte1.charAt(i);
-                        i++;
-                        timeoutIds.push(setTimeout(escribirSaludo, 100));
-                    } else {
-                        timeoutIds.push(setTimeout(escribirNombre, 150));
-                    }
-                }
-
-                function escribirNombre() {
-                    if (j < parte2.length) {
-                        elNombre.textContent += parte2.charAt(j);
-                        j++;
-                        timeoutIds.push(setTimeout(escribirNombre, 120));
-                    }
-                }
-
-                timeoutIds.push(setTimeout(escribirSaludo, 300));
-            }
-
-            // Usamos el IntersectionObserver de forma segura
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        reiniciarYEjecutar();
-                    }
-                });
-            }, {
-                threshold: 0.4
-            });
-
-            observer.observe(seccion);
-        });
-    </script>
-
+    <!-- Archivo Único de JavaScript -->
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
