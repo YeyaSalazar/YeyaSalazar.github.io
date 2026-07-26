@@ -1,0 +1,35 @@
+<!-- Header / Navbar -->
+<header class="sticky top-0 z-50 bg-pink-200/90 backdrop-blur-md shadow-sm border-b border-pink-300/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
+        <a href="#" class="text-xl font-bold text-pink-600 hover:scale-105 transition duration-300 inline-block">Iran
+            Dev</a>
+
+        <!-- Menú Desktop -->
+        <nav class="space-x-6 hidden md:flex items-center text-sm font-medium">
+            <a href="#proyectos" class="hover:text-pink-700 hover:scale-105 transition duration-200">Proyectos</a>
+            <a href="#sobre-mi" class="hover:text-pink-700 hover:scale-105 transition duration-200">Sobre mí</a>
+            <a href="#mi-cv" class="hover:text-pink-700 hover:scale-105 transition duration-200">Mi CV</a>
+            <a href="#contacto" class="hover:text-pink-700 hover:scale-105 transition duration-200">Contacto</a>
+        </nav>
+
+        <!-- Botón Menú Móvil (Hamburguesa) -->
+        <button id="mobile-menu-btn" aria-label="Abrir menú"
+            class="md:hidden text-pink-700 hover:text-pink-900 focus:outline-none p-2 rounded-lg">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                </path>
+            </svg>
+        </button>
+    </div>
+
+
+    <!-- Menú Desplegable Móvil -->
+    <div id="mobile-menu"
+        class="hidden md:hidden bg-pink-100/95 border-b border-pink-300 px-4 pt-2 pb-4 space-y-3 font-medium">
+        <a href="#proyectos" class="block text-gray-800 hover:text-pink-600 transition">Proyectos</a>
+        <a href="#sobre-mi" class="block text-gray-800 hover:text-pink-600 transition">Sobre mí</a>
+        <a href="#mi-cv" class="block text-gray-800 hover:text-pink-600 transition">Mi CV</a>
+        <a href="#contacto" class="block text-gray-800 hover:text-pink-600 transition">Contacto</a>
+    </div>
+</header>

@@ -1,7 +1,40 @@
 // ==========================================
-// 1. SCRIPT DE EFECTO MÁQUINA DE ESCRIBIR (HERO)
+// FUNCIÓN PARA CARGAR COMPONENTES HTML
 // ==========================================
-document.addEventListener("DOMContentLoaded", () => {
+async function cargarComponente(idContenedor, rutaArchivo) {
+    try {
+        const respuesta = await fetch(rutaArchivo);
+        if (respuesta.ok) {
+            const html = await respuesta.text();
+            const contenedor = document.getElementById(idContenedor);
+            if (contenedor) {
+                contenedor.innerHTML = html;
+            }
+        } else {
+            console.error(`Error al cargar ${rutaArchivo} (${respuesta.status})`);
+        }
+    } catch (error) {
+        console.error(`Error de red/fetch en ${rutaArchivo}:`, error);
+    }
+}
+
+// Marcamos el callback de DOMContentLoaded como ASYNC
+document.addEventListener("DOMContentLoaded", async () => {
+    
+    // 1. Cargamos TODOS los componentes primero en paralelo
+    await Promise.all([
+        cargarComponente("component-header", "../components/header.html"),
+        cargarComponente("component-hero", "./components/hero.html"),
+        cargarComponente("component-habilidades", "./components/habilidades.html"),
+        cargarComponente("component-proyectos", "./components/proyectos.html"),
+        cargarComponente("component-sobre-mi", "./components/sobre-mi.html"),
+        cargarComponente("component-cv", "./components/cv-logros.html"),
+        cargarComponente("component-footer", "./components/footer.html")
+    ]);
+
+    // ==========================================
+    // 1. SCRIPT DE EFECTO MÁQUINA DE ESCRIBIR (HERO)
+    // ==========================================
     const parte1 = "Hola, soy ";
     const parte2 = "Iran Salazar";
 
@@ -10,7 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const seccion = document.getElementById("seccion-hero");
 
     if (!seccion || !elSaludo || !elNombre) {
-        // Si no estamos en una página con la sección Hero, no interrumpimos el resto del script
         console.warn("Elementos de la sección Hero no encontrados en esta vista.");
     } else {
         let timeoutIds = [];
@@ -69,7 +101,6 @@ document.addEventListener("DOMContentLoaded", () => {
         observerHero.observe(seccion);
     }
 
-
     // ==========================================
     // 2. SCRIPT DE ANIMACIÓN REPETIBLE EN PROYECTOS
     // ==========================================
@@ -90,6 +121,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
         tarjetasProyectos.forEach(tarjeta => {
             observerProyectos.observe(tarjeta);
+        });
+    }
+
+    // ==========================================
+    // 3. MENÚ HAMBURGUESA MÓVIL (HEADER)
+    // ==========================================
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+
+    if (btn && menu) {
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
         });
     }
 });
