@@ -1,18 +1,23 @@
-@keyframes scrollInfinito {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
+@keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Mueve exactamente el 50% de la pista duplicada */
+    transform: translateX(-50%);
+  }
 }
 
 .animate-infinite-scroll {
-    animation: scrollInfinito 25s linear infinite;
+  display: flex;
+  width: max-content;
+  animation: infinite-scroll 25s linear infinite;
+  /* Mantiene renderizado fluido de hardware */
+  will-change: transform;
 }
 
+/* Máscara de desvanecido en orillas */
 .mask-fade {
-    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
 }

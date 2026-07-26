@@ -1,68 +1,77 @@
-<!-- Sección de Tecnologías con Carrusel Infinito -->
 <section class="py-8 bg-gradient-to-r from-pink-300 via-pink-400 to-pink-300 shadow-inner overflow-hidden mb-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 text-center md:text-left">
-        <h3 class="text-xl sm:text-2xl text-white font-bold tracking-wide">Habilidades técnicas</h3>
+        <h3 class="text-xl sm:text-2xl text-white font-bold tracking-wide">Habilidades y Tecnologías</h3>
     </div>
 
+    <!-- Contenedor con la máscara de degradado -->
     <div class="relative w-full overflow-hidden mask-fade">
-        <div class="flex w-max animate-infinite-scroll space-x-6 sm:space-x-12 items-center">
-            <!-- GRUPO 1 DE ICONOS -->
-            <div class="flex items-center space-x-6 sm:space-x-12 shrink-0">
-                <div
-                    class="flex items-center space-x-2 bg-white/50 backdrop-blur-md px-4 py-2 rounded-xl shadow-sm border border-white/60">
-                    <img src="./assets/tailwind-logo.webp" alt="Tailwind" class="w-7 h-7 object-contain">
-                    <span class="font-semibold text-pink-950 text-sm sm:text-base">Tailwind CSS</span>
-                </div>
-                <div
-                    class="flex items-center space-x-2 bg-white/50 backdrop-blur-md px-4 py-2 rounded-xl shadow-sm border border-white/60">
-                    <img src="./assets/tailwind-logo.webp" alt="JavaScript" class="w-7 h-7 object-contain">
+        <!-- Pista animada con gap para separar Grupo 1 de Grupo 2 -->
+        <div class="animate-infinite-scroll gap-6 sm:gap-10">
+            
+            <!-- GRUPO 1 -->
+            <div class="flex items-center gap-6 sm:gap-10 shrink-0">
+                <div class="flex items-center gap-2.5 bg-white/60 backdrop-blur-md px-4 py-2 rounded-xl shadow-sm border border-white/70">
+                    <i class="bx bxl-javascript text-2xl text-yellow-500"></i>
                     <span class="font-semibold text-pink-950 text-sm sm:text-base">JavaScript</span>
                 </div>
-                <div
-                    class="flex items-center space-x-2 bg-white/50 backdrop-blur-md px-4 py-2 rounded-xl shadow-sm border border-white/60">
-                    <img src="./assets/tailwind-logo.webp" alt="HTML5" class="w-7 h-7 object-contain">
-                    <span class="font-semibold text-pink-950 text-sm sm:text-base">HTML5</span>
+                <div class="flex items-center gap-2.5 bg-white/60 backdrop-blur-md px-4 py-2 rounded-xl shadow-sm border border-white/70">
+                    <i class="bx bxl-typescript text-2xl text-blue-600"></i>
+                    <span class="font-semibold text-pink-950 text-sm sm:text-base">TypeScript</span>
                 </div>
-                <div
-                    class="flex items-center space-x-2 bg-white/50 backdrop-blur-md px-4 py-2 rounded-xl shadow-sm border border-white/60">
-                    <img src="./assets/tailwind-logo.webp" alt="CSS3" class="w-7 h-7 object-contain">
-                    <span class="font-semibold text-pink-950 text-sm sm:text-base">CSS3</span>
+                <div class="flex items-center gap-2.5 bg-white/60 backdrop-blur-md px-4 py-2 rounded-xl shadow-sm border border-white/70">
+                    <i class="bx bxl-react text-2xl text-sky-500"></i>
+                    <span class="font-semibold text-pink-950 text-sm sm:text-base">React</span>
                 </div>
-                <div
-                    class="flex items-center space-x-2 bg-white/50 backdrop-blur-md px-4 py-2 rounded-xl shadow-sm border border-white/60">
-                    <img src="./assets/tailwind-logo.webp" alt="Git" class="w-7 h-7 object-contain">
-                    <span class="font-semibold text-pink-950 text-sm sm:text-base">Git</span>
+                <div class="flex items-center gap-2.5 bg-white/60 backdrop-blur-md px-4 py-2 rounded-xl shadow-sm border border-white/70">
+                    <i class="bx bxl-tailwind-css text-2xl text-teal-500"></i>
+                    <span class="font-semibold text-pink-950 text-sm sm:text-base">Tailwind CSS</span>
+                </div>
+                <div class="flex items-center gap-2.5 bg-white/60 backdrop-blur-md px-4 py-2 rounded-xl shadow-sm border border-white/70">
+                    <i class="bx bxl-nodejs text-2xl text-green-600"></i>
+                    <span class="font-semibold text-pink-950 text-sm sm:text-base">Node.js</span>
+                </div>
+                <div class="flex items-center gap-2.5 bg-white/60 backdrop-blur-md px-4 py-2 rounded-xl shadow-sm border border-white/70">
+                    <i class="bx bxl-html5 text-2xl text-orange-600"></i>
+                    <span class="font-semibold text-pink-950 text-sm sm:text-base">HTML5 & CSS3</span>
+                </div>
+                <div class="flex items-center gap-2.5 bg-white/60 backdrop-blur-md px-4 py-2 rounded-xl shadow-sm border border-white/70">
+                    <i class="bx bxl-git text-2xl text-orange-500"></i>
+                    <span class="font-semibold text-pink-950 text-sm sm:text-base">Git & GitHub</span>
                 </div>
             </div>
 
-            <!-- GRUPO 2 DE ICONOS (Duplicado) -->
-            <div class="flex items-center space-x-6 sm:space-x-12 shrink-0" aria-hidden="true">
-                <div
-                    class="flex items-center space-x-2 bg-white/50 backdrop-blur-md px-4 py-2 rounded-xl shadow-sm border border-white/60">
-                    <img src="./assets/tailwind-logo.webp" alt="Tailwind" class="w-7 h-7 object-contain">
-                    <span class="font-semibold text-pink-950 text-sm sm:text-base">Tailwind CSS</span>
-                </div>
-                <div
-                    class="flex items-center space-x-2 bg-white/50 backdrop-blur-md px-4 py-2 rounded-xl shadow-sm border border-white/60">
-                    <img src="./assets/tailwind-logo.webp" alt="JavaScript" class="w-7 h-7 object-contain">
+            <!-- GRUPO 2 (Duplicado) -->
+            <div class="flex items-center gap-6 sm:gap-10 shrink-0" aria-hidden="true">
+                <div class="flex items-center gap-2.5 bg-white/60 backdrop-blur-md px-4 py-2 rounded-xl shadow-sm border border-white/70">
+                    <i class="bx bxl-javascript text-2xl text-yellow-500"></i>
                     <span class="font-semibold text-pink-950 text-sm sm:text-base">JavaScript</span>
                 </div>
-                <div
-                    class="flex items-center space-x-2 bg-white/50 backdrop-blur-md px-4 py-2 rounded-xl shadow-sm border border-white/60">
-                    <img src="./assets/tailwind-logo.webp" alt="HTML5" class="w-7 h-7 object-contain">
-                    <span class="font-semibold text-pink-950 text-sm sm:text-base">HTML5</span>
+                <div class="flex items-center gap-2.5 bg-white/60 backdrop-blur-md px-4 py-2 rounded-xl shadow-sm border border-white/70">
+                    <i class="bx bxl-typescript text-2xl text-blue-600"></i>
+                    <span class="font-semibold text-pink-950 text-sm sm:text-base">TypeScript</span>
                 </div>
-                <div
-                    class="flex items-center space-x-2 bg-white/50 backdrop-blur-md px-4 py-2 rounded-xl shadow-sm border border-white/60">
-                    <img src="./assets/tailwind-logo.webp" alt="CSS3" class="w-7 h-7 object-contain">
-                    <span class="font-semibold text-pink-950 text-sm sm:text-base">CSS3</span>
+                <div class="flex items-center gap-2.5 bg-white/60 backdrop-blur-md px-4 py-2 rounded-xl shadow-sm border border-white/70">
+                    <i class="bx bxl-react text-2xl text-sky-500"></i>
+                    <span class="font-semibold text-pink-950 text-sm sm:text-base">React</span>
                 </div>
-                <div
-                    class="flex items-center space-x-2 bg-white/50 backdrop-blur-md px-4 py-2 rounded-xl shadow-sm border border-white/60">
-                    <img src="./assets/tailwind-logo.webp" alt="Git" class="w-7 h-7 object-contain">
-                    <span class="font-semibold text-pink-950 text-sm sm:text-base">Git</span>
+                <div class="flex items-center gap-2.5 bg-white/60 backdrop-blur-md px-4 py-2 rounded-xl shadow-sm border border-white/70">
+                    <i class="bx bxl-tailwind-css text-2xl text-teal-500"></i>
+                    <span class="font-semibold text-pink-950 text-sm sm:text-base">Tailwind CSS</span>
+                </div>
+                <div class="flex items-center gap-2.5 bg-white/60 backdrop-blur-md px-4 py-2 rounded-xl shadow-sm border border-white/70">
+                    <i class="bx bxl-nodejs text-2xl text-green-600"></i>
+                    <span class="font-semibold text-pink-950 text-sm sm:text-base">Node.js</span>
+                </div>
+                <div class="flex items-center gap-2.5 bg-white/60 backdrop-blur-md px-4 py-2 rounded-xl shadow-sm border border-white/70">
+                    <i class="bx bxl-html5 text-2xl text-orange-600"></i>
+                    <span class="font-semibold text-pink-950 text-sm sm:text-base">HTML5 & CSS3</span>
+                </div>
+                <div class="flex items-center gap-2.5 bg-white/60 backdrop-blur-md px-4 py-2 rounded-xl shadow-sm border border-white/70">
+                    <i class="bx bxl-git text-2xl text-orange-500"></i>
+                    <span class="font-semibold text-pink-950 text-sm sm:text-base">Git & GitHub</span>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
