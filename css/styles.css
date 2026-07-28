@@ -389,6 +389,9 @@
   .max-h-\[85vh\] {
     max-height: 85vh;
   }
+  .min-h-14 {
+    min-height: calc(var(--spacing) * 14);
+  }
   .min-h-\[3\.5rem\] {
     min-height: 3.5rem;
   }
@@ -447,11 +450,17 @@
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
+  .animate-bouncing {
+    animation: bouncing 1s ease-in-out both;
+  }
   .animate-fade-in {
     animation: fade-in 0.6s ease-in both;
   }
   .animate-pulse {
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  .animate-slide-in-left {
+    animation: slide-in-left 0.6s ease-out both;
   }
   .animate-spin {
     animation: var(--animate-spin);
@@ -1111,6 +1120,10 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
+  .duration-100 {
+    --tw-duration: 100ms;
+    transition-duration: 100ms;
+  }
   .duration-200 {
     --tw-duration: 200ms;
     transition-duration: 200ms;
@@ -1123,9 +1136,16 @@
     --tw-duration: 500ms;
     transition-duration: 500ms;
   }
+  .animate-duration-0 {
+    animation-duration: calc(0 * 1ms);
+    animation-duration: 0ms;
+  }
   .select-none {
     -webkit-user-select: none;
     user-select: none;
+  }
+  .animate-slide-distance-\[6rem\] {
+    --tw-anim-slide-distance: 6rem;
   }
   @media (hover: hover) {
     .group-hover\:scale-105:is(:where(.group):hover *) {
@@ -1348,6 +1368,9 @@
     .md\:h-80 {
       height: calc(var(--spacing) * 80);
     }
+    .md\:min-h-18 {
+      min-height: calc(var(--spacing) * 18);
+    }
     .md\:min-h-\[4\.5rem\] {
       min-height: 4.5rem;
     }
@@ -1394,6 +1417,18 @@
     }
     .lg\:w-96 {
       width: calc(var(--spacing) * 96);
+    }
+    .lg\:w-104 {
+      width: calc(var(--spacing) * 104);
+    }
+    .lg\:w-120 {
+      width: calc(var(--spacing) * 120);
+    }
+    .lg\:w-200 {
+      width: calc(var(--spacing) * 200);
+    }
+    .lg\:w-300 {
+      width: calc(var(--spacing) * 300);
     }
     .lg\:w-\[26rem\] {
       width: 26rem;
@@ -1777,12 +1812,31 @@
     opacity: 1;
   }
 }
+@keyframes bouncing {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 @keyframes pulse {
   0%, 100% {
     opacity: 1;
   }
   50% {
     opacity: 0.5;
+  }
+}
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(calc(var(--tw-anim-slide-distance, 20px) * -1));
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 @layer properties {
