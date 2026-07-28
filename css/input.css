@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import 'tailwind-animations';
 
 @keyframes infinite-scroll {
   0% {
