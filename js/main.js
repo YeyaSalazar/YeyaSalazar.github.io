@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     // 2. Inicializar módulos dependientes del DOM cargado
     initHeroAnimation();
     initProyectosObserver();
+    initBlogObserver();
     initMobileMenu();
     initGlobalEventListeners();
 });
@@ -141,6 +142,23 @@ function initHeroAnimation() {
 // ==========================================
 function initProyectosObserver() {
     const tarjetas = document.querySelectorAll(".proyecto-card");
+    if (!tarjetas.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.remove("opacity-0", "-translate-x-10");
+            } else {
+                entry.target.classList.add("opacity-0", "-translate-x-10");
+            }
+        });
+    }, { threshold: 0.15 });
+
+    tarjetas.forEach(t => observer.observe(t));
+}
+
+function initBlogObserver() {
+    const tarjetas = document.querySelectorAll(".blog-card");
     if (!tarjetas.length) return;
 
     const observer = new IntersectionObserver((entries) => {
