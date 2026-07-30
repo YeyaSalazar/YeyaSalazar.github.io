@@ -1,5 +1,5 @@
 // ==========================================
-// CONFIGURACIÓN Y BASE DE DATOS DEL BLOG
+// 1. BASE DE DATOS LOCAL DEL BLOG
 // ==========================================
 const ARTICULOS_DB = {
     'articulo-1': {
@@ -29,7 +29,7 @@ const ARTICULOS_DB = {
 };
 
 // ==========================================
-// FUNCIÓN PARA CARGAR COMPONENTES HTML CON FALLBACK
+// 2. CARGA DINÁMICA DE COMPONENTES HTML
 // ==========================================
 async function cargarComponente(idContenedor, rutaArchivo) {
     const contenedor = document.getElementById(idContenedor);
@@ -52,11 +52,11 @@ async function cargarComponente(idContenedor, rutaArchivo) {
 }
 
 // ==========================================
-// INICIALIZACIÓN DE LA APLICACIÓN
+// 3. INICIALIZACIÓN PRINCIPAL DE LA APP
 // ==========================================
 document.addEventListener("DOMContentLoaded", async () => {
     
-    // 1. Carga paralela de todos los módulos HTML
+    // 1. Carga paralela de componentes HTML
     await Promise.all([
         cargarComponente("component-header", "./components/header.html"),
         cargarComponente("component-hero", "./components/hero.html"),
@@ -68,16 +68,21 @@ document.addEventListener("DOMContentLoaded", async () => {
         cargarComponente("component-footer", "./components/footer.html")
     ]);
 
-    // 2. Inicializar módulos dependientes del DOM cargado
+    // 2. Inicialización de funciones del DOM
     initHeroAnimation();
     initProyectosObserver();
     initBlogObserver();
     initMobileMenu();
     initGlobalEventListeners();
+
+    // 3. Registrar visita inicial a la página
+    if (typeof trackEvent === 'function') {
+        trackEvent('page_view', document.referrer || 'directo');
+    }
 });
 
 // ==========================================
-// LÓGICA MÓDULO HERO (EFECTO MÁQUINA DE ESCRIBIR)
+// 4. ANIMACIÓN HERO (MÁQUINA DE ESCRIBIR)
 // ==========================================
 function initHeroAnimation() {
     const parte1 = "Hola, soy ";
@@ -138,7 +143,7 @@ function initHeroAnimation() {
 }
 
 // ==========================================
-// ANIMACIONES AL SCROLL (PROYECTOS)
+// 5. ANIMACIONES DE SCROLL (OBSERVERS)
 // ==========================================
 function initProyectosObserver() {
     const tarjetas = document.querySelectorAll(".proyecto-card");
@@ -175,7 +180,7 @@ function initBlogObserver() {
 }
 
 // ==========================================
-// MENÚ HAMBURGUESA MÓVIL
+// 6. MENÚ MÓVIL HAMBURGUESA
 // ==========================================
 function initMobileMenu() {
     const btn = document.getElementById('mobile-menu-btn');
@@ -183,7 +188,12 @@ function initMobileMenu() {
 
     if (!btn || !menu) return;
 
-    btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+    btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        if (typeof trackEvent === 'function') {
+            trackEvent('toggle_menu_movil', menu.classList.contains('hidden') ? 'cerrar' : 'abrir');
+        }
+    });
 
     menu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => menu.classList.add('hidden'));
@@ -191,16 +201,17 @@ function initMobileMenu() {
 }
 
 // ==========================================
-// DELEGACIÓN DE EVENTOS GLOBALES (MODAL & COPIAR)
+// 7. DELEGACIÓN GLOBAL DE EVENTOS & TRACKING
 // ==========================================
 function initGlobalEventListeners() {
     document.addEventListener('click', (e) => {
         
-        // 1. Abrir Modal de Artículo
+        // 1. Abrir Modal de Artículo del Blog
         const btnLeer = e.target.closest('[data-articulo-id]');
         if (btnLeer) {
             const articuloId = btnLeer.getAttribute('data-articulo-id');
             abrirModalArticulo(articuloId);
+            if (typeof trackEvent === 'function') trackEvent('lectura_articulo_blog', articuloId);
             return;
         }
 
@@ -216,8 +227,36 @@ function initGlobalEventListeners() {
         // 3. Botón Copiar Email en el Footer
         const btnCopiar = e.target.closest('#btn-copiar-email');
         if (btnCopiar) {
-            const email = btnCopiar.getAttribute('data-email') || 'tu-correo@example.com';
+            const email = btnCopiar.getAttribute('data-email') || 'iran.gutierrez.dev@gmail.com';
             copiarAlPortapapeles(email);
+            if (typeof trackEvent === 'function') trackEvent('copiar_email', email);
+        }
+
+        // 4. Medir Clics en Descarga de CV
+        const btnCV = e.target.closest('a[download]');
+        if (btnCV) {
+            if (typeof trackEvent === 'function') {
+                trackEvent('clic_descarga_cv', btnCV.getAttribute('download') || 'CV-Iran-Salazar.pdf');
+            }
+        }
+
+        // 5. Medir Clics en Enlaces de Navegación del Header / Menú
+        const navLink = e.target.closest('header a[href^="#"], nav a[href^="#"]');
+        if (navLink) {
+            const seccionDestino = navLink.getAttribute('href');
+            const textoEnlace = navLink.textContent.trim();
+            if (typeof trackEvent === 'function') {
+                trackEvent('clic_navegacion', `${textoEnlace} (${seccionDestino})`);
+            }
+            return;
+        }
+
+        // 6. Medir Redirecciones a Enlaces Externos (LinkedIn, GitHub, etc.)
+        const linkExterno = e.target.closest('a[target="_blank"]');
+        if (linkExterno && !btnCV) {
+            if (typeof trackEvent === 'function') {
+                trackEvent('redireccion_externa', linkExterno.href);
+            }
         }
     });
 
@@ -228,7 +267,7 @@ function initGlobalEventListeners() {
 }
 
 // ==========================================
-// FUNCIONES AUXILIARES (MODAL & CLIPBOARD)
+// 8. FUNCIONES AUXILIARES (MODAL & CLIPBOARD)
 // ==========================================
 function abrirModalArticulo(idArticulo) {
     const articulo = ARTICULOS_DB[idArticulo];
